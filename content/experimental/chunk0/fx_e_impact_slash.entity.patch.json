@@ -1,58 +1,58 @@
 {
-	"tempHash": "00579D979A8873C1",
-	"tbluHash": "00783EFE8EFEF6FD",
+	"tempHash": "00F1357FAE7EEA08",
+	"tbluHash": "00374DF70ACEE709",
 	"patch": [
 		{
 			"SubEntityOperation": [
-				"08e5e23731d9b6dd",
+				"a9986c15f149c3e9",
 				{
 					"SetPropertyValue": {
 						"property_name": "m_fDecalSizeA",
-						"value": 0.15
+						"value": 0.5
 					}
 				}
 			]
 		},
 		{
 			"SubEntityOperation": [
-				"08e5e23731d9b6dd",
+				"a9986c15f149c3e9",
 				{
 					"SetPropertyValue": {
 						"property_name": "m_fDecalSizeB",
-						"value": 0.35
+						"value": 1.0
 					}
 				}
 			]
 		},
 		{
 			"SubEntityOperation": [
-				"ee22dfccba323d1b",
+				"db104c2fcca6339c",
 				{
 					"SetPropertyValue": {
 						"property_name": "m_fParticleSizeMin",
-						"value": 5.03
+						"value": 10.0
 					}
 				}
 			]
 		},
 		{
 			"SubEntityOperation": [
-				"ee22dfccba323d1b",
+				"db104c2fcca6339c",
 				{
 					"SetPropertyValue": {
 						"property_name": "m_fParticleSizeMax",
-						"value": 5.03
+						"value": 15.0
 					}
 				}
 			]
 		},
 		{
 			"SubEntityOperation": [
-				"a6d1d37cc333315c",
+				"0b684d894294f024",
 				{
 					"SetPropertyValue": {
 						"property_name": "Delay time (ms)",
-						"value": 3000
+						"value": 1000
 					}
 				}
 			]

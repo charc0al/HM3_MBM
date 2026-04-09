@@ -1,164 +1,10 @@
 {
-	"tempHash": "002BAD836FD668A4",
-	"tbluHash": "00EF0D8C1269C3C3",
+	"tempHash": "00F2CD5D5FE0D82B",
+	"tbluHash": "005BA3E574B8CB6C",
 	"patch": [
 		{
 			"SubEntityOperation": [
-				"53c063a29c043fdd",
-				{
-					"SetPropertyValue": {
-						"property_name": "m_fParticleSizeMin",
-						"value": 150.03
-					}
-				}
-			]
-		},
-		{
-			"SubEntityOperation": [
-				"53c063a29c043fdd",
-				{
-					"SetPropertyValue": {
-						"property_name": "m_fParticleSizeMax",
-						"value": -30.03
-					}
-				}
-			]
-		},
-		{
-			"SubEntityOperation": [
-				"53c063a29c043fdd",
-				{
-					"SetPropertyValue": {
-						"property_name": "StartMaxSize",
-						"value": 10.02
-					}
-				}
-			]
-		},
-		{
-			"SubEntityOperation": [
-				"53c063a29c043fdd",
-				{
-					"SetPropertyValue": {
-						"property_name": "StartMinSize",
-						"value": 2.02
-					}
-				}
-			]
-		},
-		{
-			"SubEntityOperation": [
-				"9ae992023d6776a9",
-				{
-					"SetPropertyValue": {
-						"property_name": "m_fDecalSizeA",
-						"value": 0.2
-					}
-				}
-			]
-		},
-		{
-			"SubEntityOperation": [
-				"9ae992023d6776a9",
-				{
-					"SetPropertyValue": {
-						"property_name": "m_fDecalSizeB",
-						"value": 0.6
-					}
-				}
-			]
-		},
-		{
-			"SubEntityOperation": [
-				"09c44389b876a296",
-				{
-					"SetPropertyValue": {
-						"property_name": "m_fParticleSizeMin",
-						"value": 60.03
-					}
-				}
-			]
-		},
-		{
-			"SubEntityOperation": [
-				"09c44389b876a296",
-				{
-					"SetPropertyValue": {
-						"property_name": "m_fParticleSizeMax",
-						"value": 30.03
-					}
-				}
-			]
-		},
-		{
-			"SubEntityOperation": [
-				"09c44389b876a296",
-				{
-					"SetPropertyValue": {
-						"property_name": "StartMaxSize",
-						"value": 3.02
-					}
-				}
-			]
-		},
-		{
-			"SubEntityOperation": [
-				"09c44389b876a296",
-				{
-					"SetPropertyValue": {
-						"property_name": "StartMinSize",
-						"value": 2.02
-					}
-				}
-			]
-		},
-		{
-			"SubEntityOperation": [
-				"06c4c878296aca40",
-				{
-					"SetPropertyValue": {
-						"property_name": "m_fParticleSizeMin",
-						"value": 120.03
-					}
-				}
-			]
-		},
-		{
-			"SubEntityOperation": [
-				"06c4c878296aca40",
-				{
-					"SetPropertyValue": {
-						"property_name": "m_fParticleSizeMax",
-						"value": 30.03
-					}
-				}
-			]
-		},
-		{
-			"SubEntityOperation": [
-				"06c4c878296aca40",
-				{
-					"SetPropertyValue": {
-						"property_name": "StartMaxSize",
-						"value": 10.02
-					}
-				}
-			]
-		},
-		{
-			"SubEntityOperation": [
-				"06c4c878296aca40",
-				{
-					"SetPropertyValue": {
-						"property_name": "StartMinSize",
-						"value": 2.02
-					}
-				}
-			]
-		},
-		{
-			"SubEntityOperation": [
-				"e03fe3fb20f6cbf1",
+				"f1100441e4b22abb",
 				{
 					"SetPropertyValue": {
 						"property_name": "m_fParticleSizeMin",
@@ -169,7 +15,40 @@
 		},
 		{
 			"SubEntityOperation": [
-				"e03fe3fb20f6cbf1",
+				"f1100441e4b22abb",
+				{
+					"SetPropertyValue": {
+						"property_name": "StartMaxSize",
+						"value": 60.03
+					}
+				}
+			]
+		},
+		{
+			"SubEntityOperation": [
+				"f1100441e4b22abb",
+				{
+					"SetPropertyValue": {
+						"property_name": "m_fParticleSizeMax",
+						"value": -60.03
+					}
+				}
+			]
+		},
+		{
+			"SubEntityOperation": [
+				"1af50a5faf7ed228",
+				{
+					"SetPropertyValue": {
+						"property_name": "m_fParticleSizeMin",
+						"value": 120.03
+					}
+				}
+			]
+		},
+		{
+			"SubEntityOperation": [
+				"1af50a5faf7ed228",
 				{
 					"SetPropertyValue": {
 						"property_name": "m_fParticleSizeMax",
@@ -180,32 +59,32 @@
 		},
 		{
 			"SubEntityOperation": [
-				"e03fe3fb20f6cbf1",
+				"1af50a5faf7ed228",
 				{
 					"SetPropertyValue": {
 						"property_name": "StartMaxSize",
-						"value": 3.02
+						"value": 30.03
 					}
 				}
 			]
 		},
 		{
 			"SubEntityOperation": [
-				"e03fe3fb20f6cbf1",
+				"1af50a5faf7ed228",
 				{
 					"SetPropertyValue": {
 						"property_name": "StartMinSize",
-						"value": 2.02
+						"value": 15.03
 					}
 				}
 			]
 		},
 		{
 			"SubEntityOperation": [
-				"4e4fc764d7c4baf2",
+				"3473ad0d474e0a7a",
 				{
 					"SetPropertyValue": {
-						"property_name": "m_fParticleSizeMin",
+						"property_name": "m_fDecalSizeA",
 						"value": 1.503
 					}
 				}
@@ -213,10 +92,65 @@
 		},
 		{
 			"SubEntityOperation": [
-				"4e4fc764d7c4baf2",
+				"3473ad0d474e0a7a",
+				{
+					"SetPropertyValue": {
+						"property_name": "m_fDecalSizeB",
+						"value": 4.503
+					}
+				}
+			]
+		},
+		{
+			"SubEntityOperation": [
+				"acf8db89b1294d0f",
+				{
+					"SetPropertyValue": {
+						"property_name": "m_fParticleSizeMin",
+						"value": 60.03
+					}
+				}
+			]
+		},
+		{
+			"SubEntityOperation": [
+				"acf8db89b1294d0f",
 				{
 					"SetPropertyValue": {
 						"property_name": "m_fParticleSizeMax",
+						"value": 30.03
+					}
+				}
+			]
+		},
+		{
+			"SubEntityOperation": [
+				"acf8db89b1294d0f",
+				{
+					"SetPropertyValue": {
+						"property_name": "StartMaxSize",
+						"value": 30.03
+					}
+				}
+			]
+		},
+		{
+			"SubEntityOperation": [
+				"acf8db89b1294d0f",
+				{
+					"SetPropertyValue": {
+						"property_name": "StartMinSize",
+						"value": 15.03
+					}
+				}
+			]
+		},
+		{
+			"SubEntityOperation": [
+				"e9af7d4622cb0935",
+				{
+					"SetPropertyValue": {
+						"property_name": "m_fParticleSizeMin",
 						"value": 3.03
 					}
 				}
@@ -224,22 +158,143 @@
 		},
 		{
 			"SubEntityOperation": [
-				"4e4fc764d7c4baf2",
+				"e9af7d4622cb0935",
 				{
 					"SetPropertyValue": {
-						"property_name": "m_fTimeToLiveSecondsMin",
-						"value": 0.802
+						"property_name": "m_fParticleSizeMax",
+						"value": 4.503
 					}
 				}
 			]
 		},
 		{
 			"SubEntityOperation": [
-				"4e4fc764d7c4baf2",
+				"3b32cb80bc9e8c0d",
 				{
 					"SetPropertyValue": {
-						"property_name": "m_fTimeToLiveSecondsMax",
-						"value": 1.202
+						"property_name": "m_fParticleSizeMin",
+						"value": 90.03
+					}
+				}
+			]
+		},
+		{
+			"SubEntityOperation": [
+				"3b32cb80bc9e8c0d",
+				{
+					"SetPropertyValue": {
+						"property_name": "m_fParticleSizeMax",
+						"value": 30.03
+					}
+				}
+			]
+		},
+		{
+			"SubEntityOperation": [
+				"3b32cb80bc9e8c0d",
+				{
+					"SetPropertyValue": {
+						"property_name": "StartMaxSize",
+						"value": 30.03
+					}
+				}
+			]
+		},
+		{
+			"SubEntityOperation": [
+				"3b32cb80bc9e8c0d",
+				{
+					"SetPropertyValue": {
+						"property_name": "StartMinSize",
+						"value": 15.03
+					}
+				}
+			]
+		},
+		{
+			"SubEntityOperation": [
+				"21604f2b1be1b528",
+				{
+					"SetPropertyValue": {
+						"property_name": "m_fParticleSizeMin",
+						"value": 90.03
+					}
+				}
+			]
+		},
+		{
+			"SubEntityOperation": [
+				"21604f2b1be1b528",
+				{
+					"SetPropertyValue": {
+						"property_name": "StartMinSize",
+						"value": 30.03
+					}
+				}
+			]
+		},
+		{
+			"SubEntityOperation": [
+				"21604f2b1be1b528",
+				{
+					"SetPropertyValue": {
+						"property_name": "StartMaxSize",
+						"value": 60.03
+					}
+				}
+			]
+		},
+		{
+			"SubEntityOperation": [
+				"21604f2b1be1b528",
+				{
+					"SetPropertyValue": {
+						"property_name": "m_fParticleSizeMax",
+						"value": -60.03
+					}
+				}
+			]
+		},
+		{
+			"SubEntityOperation": [
+				"1c6cdd61abb9524e",
+				{
+					"SetPropertyValue": {
+						"property_name": "m_fParticleSizeMin",
+						"value": 120.03
+					}
+				}
+			]
+		},
+		{
+			"SubEntityOperation": [
+				"1c6cdd61abb9524e",
+				{
+					"SetPropertyValue": {
+						"property_name": "m_fParticleSizeMax",
+						"value": 60.03
+					}
+				}
+			]
+		},
+		{
+			"SubEntityOperation": [
+				"1c6cdd61abb9524e",
+				{
+					"SetPropertyValue": {
+						"property_name": "StartMaxSize",
+						"value": 24.03
+					}
+				}
+			]
+		},
+		{
+			"SubEntityOperation": [
+				"1c6cdd61abb9524e",
+				{
+					"SetPropertyValue": {
+						"property_name": "StartMinSize",
+						"value": 18.03
 					}
 				}
 			]

@@ -4,6 +4,17 @@
 	"patch": [
 		{
 			"SubEntityOperation": [
+				"458e7b09669cc012",
+				{
+					"SetPropertyValue": {
+						"property_name": "m_fParticleSizeMin",
+						"value": 120.03
+					}
+				}
+			]
+		},
+		{
+			"SubEntityOperation": [
 				"e0e79440ab7ea24f",
 				{
 					"SetPropertyValue": {
@@ -31,6 +42,50 @@
 					"SetPropertyValue": {
 						"property_name": "m_fDecalSizeB",
 						"value": 0.5499999970197678
+					}
+				}
+			]
+		},
+		{
+			"SubEntityOperation": [
+				"f71ebd74aa246749",
+				{
+					"SetPropertyValue": {
+						"property_name": "m_fParticleSizeMin",
+						"value": 3.03
+					}
+				}
+			]
+		},
+		{
+			"SubEntityOperation": [
+				"f71ebd74aa246749",
+				{
+					"SetPropertyValue": {
+						"property_name": "m_fParticleSizeMax",
+						"value": 4.503
+					}
+				}
+			]
+		},
+		{
+			"SubEntityOperation": [
+				"85b6a406ebba8ebb",
+				{
+					"SetPropertyValue": {
+						"property_name": "m_fParticleSizeMin",
+						"value": 150.03
+					}
+				}
+			]
+		},
+		{
+			"SubEntityOperation": [
+				"85b6a406ebba8ebb",
+				{
+					"SetPropertyValue": {
+						"property_name": "m_fParticleSizeMax",
+						"value": 60.03
 					}
 				}
 			]

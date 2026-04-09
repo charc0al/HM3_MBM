@@ -23,6 +23,28 @@
 					}
 				}
 			]
+		},
+		{
+			"SubEntityOperation": [
+				"843be51c0db0f38e",
+				{
+					"SetPropertyValue": {
+						"property_name": "m_fParticleSizeMin",
+						"value": 3.03
+					}
+				}
+			]
+		},
+		{
+			"SubEntityOperation": [
+				"843be51c0db0f38e",
+				{
+					"SetPropertyValue": {
+						"property_name": "m_fParticleSizeMax",
+						"value": 4.503
+					}
+				}
+			]
 		}
 	],
 	"patchVersion": 6

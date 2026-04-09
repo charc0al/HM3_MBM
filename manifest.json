@@ -11,7 +11,7 @@
 		{
 			"name": "Experimental",
 			"type": "checkbox",
-			"tooltip": "Experimental. Don't use.",
+			"tooltip": "Experimental patches that I don't know what effect they have in game yet. Only check this if you wanna help me find out. If you see any changes as a result of this checkbox, let me know.",
 			"enabledByDefault": false,
 			"contentFolders": ["content/experimental"]
 		}
