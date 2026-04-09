@@ -1,0 +1,18 @@
+{
+	"tempHash": "007E091D59A6917E",
+	"tbluHash": "0095448AF17AFEC2",
+	"patch": [
+		{
+			"SubEntityOperation": [
+				"f83c3c731cb0d4e6",
+				{
+					"SetPropertyValue": {
+						"property_name": "m_fAspect",
+						"value": 1.001
+					}
+				}
+			]
+		}
+	],
+	"patchVersion": 6
+}

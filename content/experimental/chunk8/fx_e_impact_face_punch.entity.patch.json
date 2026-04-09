@@ -1,0 +1,62 @@
+{
+	"tempHash": "008202EB1C32B003",
+	"tbluHash": "00BAF8728DE6454B",
+	"patch": [
+		{
+			"SubEntityOperation": [
+				"625df9101e4a488c",
+				{
+					"SetPropertyValue": {
+						"property_name": "Delay time (ms)",
+						"value": 1600
+					}
+				}
+			]
+		},
+		{
+			"SubEntityOperation": [
+				"b305eb5bec583f74",
+				{
+					"SetPropertyValue": {
+						"property_name": "Delay time (ms)",
+						"value": 1600
+					}
+				}
+			]
+		},
+		{
+			"SubEntityOperation": [
+				"201f1b608b4e406f",
+				{
+					"SetPropertyValue": {
+						"property_name": "m_fDecalSizeA",
+						"value": 0.2500000037252903
+					}
+				}
+			]
+		},
+		{
+			"SubEntityOperation": [
+				"201f1b608b4e406f",
+				{
+					"SetPropertyValue": {
+						"property_name": "m_fDecalSizeB",
+						"value": 0.5499999970197678
+					}
+				}
+			]
+		},
+		{
+			"SubEntityOperation": [
+				"29630df2712c4df0",
+				{
+					"SetPropertyValue": {
+						"property_name": "Delay time (ms)",
+						"value": 1600
+					}
+				}
+			]
+		}
+	],
+	"patchVersion": 6
+}
