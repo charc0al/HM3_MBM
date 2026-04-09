@@ -1,11 +1,11 @@
 {
 	"$schema": "https://raw.githubusercontent.com/atampy25/simple-mod-framework/main/Mod%20Manager/src/lib/manifest-schema.json",
-	"version": "0.1.0",
+	"version": "0.2.0",
 	"id": "Charc0al.MoreBloodMelee",
 	"name": "More Blood Melee Edition",
 	"description": "Adds more blood fx to lethal melee attacks of all kinds",
 	"authors": ["Charc0al"],
-	"frameworkVersion": "2.25.1",
+	"frameworkVersion": "2.33.35",
 	"contentFolders": ["content/default"],
 	"options": [
 		{
@@ -16,5 +16,5 @@
 			"contentFolders": ["content/experimental"]
 		}
 	],
-	"updateCheck": "https://github.com/Charc0al/HM3_MBM/releases/latest/download/updates.json"
+	"updateCheck": "https://github.com/charc0al/HM3_MBM/releases/latest/download/updates.json"
 }
