@@ -106,28 +106,6 @@
 				"0037c8f988de3601",
 				{
 					"SetPropertyValue": {
-						"property_name": "m_ParticleColorRangeStart",
-						"value": "#00FFFF"
-					}
-				}
-			]
-		},
-		{
-			"SubEntityOperation": [
-				"0037c8f988de3601",
-				{
-					"SetPropertyValue": {
-						"property_name": "m_ParticleColorRangeEnd",
-						"value": "#00ff00"
-					}
-				}
-			]
-		},
-		{
-			"SubEntityOperation": [
-				"0037c8f988de3601",
-				{
-					"SetPropertyValue": {
 						"property_name": "StartMaxSize",
 						"value": 4.503
 					}
