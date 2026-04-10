@@ -7,6 +7,28 @@
 				"53c063a29c043fdd",
 				{
 					"SetPropertyValue": {
+						"property_name": "m_fParticleSizeMin",
+						"value": 150.03
+					}
+				}
+			]
+		},
+		{
+			"SubEntityOperation": [
+				"53c063a29c043fdd",
+				{
+					"SetPropertyValue": {
+						"property_name": "m_fParticleSizeMax",
+						"value": -30.03
+					}
+				}
+			]
+		},
+		{
+			"SubEntityOperation": [
+				"53c063a29c043fdd",
+				{
+					"SetPropertyValue": {
 						"property_name": "StartMaxSize",
 						"value": 10.02
 					}
@@ -51,6 +73,28 @@
 				"09c44389b876a296",
 				{
 					"SetPropertyValue": {
+						"property_name": "m_fParticleSizeMin",
+						"value": 60.03
+					}
+				}
+			]
+		},
+		{
+			"SubEntityOperation": [
+				"09c44389b876a296",
+				{
+					"SetPropertyValue": {
+						"property_name": "m_fParticleSizeMax",
+						"value": 30.03
+					}
+				}
+			]
+		},
+		{
+			"SubEntityOperation": [
+				"09c44389b876a296",
+				{
+					"SetPropertyValue": {
 						"property_name": "StartMaxSize",
 						"value": 3.02
 					}
@@ -73,6 +117,28 @@
 				"06c4c878296aca40",
 				{
 					"SetPropertyValue": {
+						"property_name": "m_fParticleSizeMin",
+						"value": 120.03
+					}
+				}
+			]
+		},
+		{
+			"SubEntityOperation": [
+				"06c4c878296aca40",
+				{
+					"SetPropertyValue": {
+						"property_name": "m_fParticleSizeMax",
+						"value": 30.03
+					}
+				}
+			]
+		},
+		{
+			"SubEntityOperation": [
+				"06c4c878296aca40",
+				{
+					"SetPropertyValue": {
 						"property_name": "StartMaxSize",
 						"value": 10.02
 					}
@@ -86,6 +152,28 @@
 					"SetPropertyValue": {
 						"property_name": "StartMinSize",
 						"value": 2.02
+					}
+				}
+			]
+		},
+		{
+			"SubEntityOperation": [
+				"e03fe3fb20f6cbf1",
+				{
+					"SetPropertyValue": {
+						"property_name": "m_fParticleSizeMin",
+						"value": 90.03
+					}
+				}
+			]
+		},
+		{
+			"SubEntityOperation": [
+				"e03fe3fb20f6cbf1",
+				{
+					"SetPropertyValue": {
+						"property_name": "m_fParticleSizeMax",
+						"value": 30.03
 					}
 				}
 			]
