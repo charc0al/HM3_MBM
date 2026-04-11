@@ -1,0 +1,51 @@
+{
+	"tempHash": "0078B3AB2174BE63",
+	"tbluHash": "00524D67FD022CC2",
+	"patch": [
+		{
+			"SubEntityOperation": [
+				"ebed1857232e61ae",
+				{
+					"SetPropertyValue": {
+						"property_name": "m_eEmitterEffect",
+						"value": "eCCEmitterEffect_AxePull"
+					}
+				}
+			]
+		},
+		{
+			"SubEntityOperation": [
+				"ebed1857232e61ae",
+				{
+					"SetPropertyValue": {
+						"property_name": "m_eDecalEffect",
+						"value": "eCCDecalEffect_None"
+					}
+				}
+			]
+		},
+		{
+			"SubEntityOperation": [
+				"ca52457b1c4244a6",
+				{
+					"SetPropertyValue": {
+						"property_name": "m_eEmitterEffect",
+						"value": "eCCEmitterEffect_AxeSlitThroat"
+					}
+				}
+			]
+		},
+		{
+			"SubEntityOperation": [
+				"6bf57b2e22e35fe2",
+				{
+					"SetPropertyValue": {
+						"property_name": "m_eEmitterEffect",
+						"value": "eCCEmitterEffect_AxePull"
+					}
+				}
+			]
+		}
+	],
+	"patchVersion": 6
+}
