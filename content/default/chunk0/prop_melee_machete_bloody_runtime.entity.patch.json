@@ -1,0 +1,29 @@
+{
+	"tempHash": "00925F807DE035E3",
+	"tbluHash": "008D32B4708F383B",
+	"patch": [
+		{
+			"SubEntityOperation": [
+				"25f32ff475d0cea4",
+				{
+					"SetPropertyValue": {
+						"property_name": "m_eEmitterEffect",
+						"value": "eCCEmitterEffect_AxeSlitThroat"
+					}
+				}
+			]
+		},
+		{
+			"SubEntityOperation": [
+				"25f32ff475d0cea4",
+				{
+					"SetPropertyValue": {
+						"property_name": "m_eDecalEffect",
+						"value": "eCCDecalEffect_SlitThroat"
+					}
+				}
+			]
+		}
+	],
+	"patchVersion": 6
+}
