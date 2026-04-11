@@ -8,7 +8,7 @@
 				{
 					"SetPropertyValue": {
 						"property_name": "m_eEmitterEffect",
-						"value": "eCCEmitterEffect_AxePull"
+						"value": "eCCEmitterEffect_Stab"
 					}
 				}
 			]
@@ -19,7 +19,7 @@
 				{
 					"SetPropertyValue": {
 						"property_name": "m_eDecalEffect",
-						"value": "eCCDecalEffect_AxePull"
+						"value": "eCCDecalEffect_Stab"
 					}
 				}
 			]
@@ -52,7 +52,7 @@
 				{
 					"SetPropertyValue": {
 						"property_name": "m_eEmitterEffect",
-						"value": "eCCEmitterEffect_Blood"
+						"value": "eCCEmitterEffect_AxeSlitThroat"
 					}
 				}
 			]
