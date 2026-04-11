@@ -6,10 +6,7 @@
 			"SubEntityOperation": [
 				"3ca94327ca265f62",
 				{
-					"AddProperty": [
-						"m_fDecalSizeA",
-						{ "type": "float32", "value": 0.25 }
-					]
+					"AddProperty": ["m_fDecalSizeA", { "type": "float32", "value": 0.25 }]
 				}
 			]
 		},
@@ -17,10 +14,7 @@
 			"SubEntityOperation": [
 				"3ca94327ca265f62",
 				{
-					"AddProperty": [
-						"m_fDecalSizeB",
-						{ "type": "float32", "value": 0.5 }
-					]
+					"AddProperty": ["m_fDecalSizeB", { "type": "float32", "value": 0.5 }]
 				}
 			]
 		}
