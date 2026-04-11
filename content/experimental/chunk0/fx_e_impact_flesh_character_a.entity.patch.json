@@ -78,6 +78,17 @@
 					}
 				}
 			]
+		},
+		{
+			"SubEntityOperation": [
+				"15e498b78c1c5ffe",
+				{
+					"SetPropertyValue": {
+						"property_name": "m_fFixedEmissionCount",
+						"value": 200.0
+					}
+				}
+			]
 		}
 	],
 	"patchVersion": 6

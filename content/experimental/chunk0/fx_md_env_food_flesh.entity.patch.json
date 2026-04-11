@@ -1,0 +1,21 @@
+{
+	"tempHash": "00F01318D701544B",
+	"tbluHash": "00E5AC052EA4476E",
+	"patch": [
+		{
+			"SubEntityOperation": [
+				"faab70250433d0a8",
+				{
+					"SetPropertyValue": {
+						"property_name": "m_vSplatDecalSize",
+						"value": {
+							"x": 8.00000011920929,
+							"y": 13.370000004768372
+						}
+					}
+				}
+			]
+		}
+	],
+	"patchVersion": 6
+}

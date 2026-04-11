@@ -1,0 +1,29 @@
+{
+	"tempHash": "00D6384B74899842",
+	"tbluHash": "0045D529655096E5",
+	"patch": [
+		{
+			"SubEntityOperation": [
+				"dbc9f62e491cbc98",
+				{
+					"SetPropertyValue": {
+						"property_name": "m_fDecalSizeA",
+						"value": 0.2500000037252903
+					}
+				}
+			]
+		},
+		{
+			"SubEntityOperation": [
+				"dbc9f62e491cbc98",
+				{
+					"SetPropertyValue": {
+						"property_name": "m_fDecalSizeB",
+						"value": 0.5499999970197678
+					}
+				}
+			]
+		}
+	],
+	"patchVersion": 6
+}
