@@ -4,6 +4,39 @@
 	"patch": [
 		{
 			"SubEntityOperation": [
+				"193951bc2ade859e",
+				{
+					"SetPropertyValue": {
+						"property_name": "m_fParticleSizeMin",
+						"value": 75.03
+					}
+				}
+			]
+		},
+		{
+			"SubEntityOperation": [
+				"193951bc2ade859e",
+				{
+					"SetPropertyValue": {
+						"property_name": "StartMinSize",
+						"value": 1.503
+					}
+				}
+			]
+		},
+		{
+			"SubEntityOperation": [
+				"193951bc2ade859e",
+				{
+					"SetPropertyValue": {
+						"property_name": "StartMaxSize",
+						"value": 4.503
+					}
+				}
+			]
+		},
+		{
+			"SubEntityOperation": [
 				"cfbf577331e4b1e4",
 				{
 					"SetPropertyValue": {

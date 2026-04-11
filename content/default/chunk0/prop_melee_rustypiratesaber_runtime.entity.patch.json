@@ -8,7 +8,7 @@
 				{
 					"SetPropertyValue": {
 						"property_name": "m_eEmitterEffect",
-						"value": "eCCEmitterEffect_SlitThroat"
+						"value": "eCCEmitterEffect_AxePull"
 					}
 				}
 			]

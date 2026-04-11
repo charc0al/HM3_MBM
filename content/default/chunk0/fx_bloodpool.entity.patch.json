@@ -8,10 +8,7 @@
 				{
 					"SetPropertyValue": {
 						"property_name": "m_vBulletDecalSize",
-						"value": {
-							"x": 4.299999952316284,
-							"y": 4.299999952316284
-						}
+						"value": { "x": 2.0, "y": 2.0 }
 					}
 				}
 			]
