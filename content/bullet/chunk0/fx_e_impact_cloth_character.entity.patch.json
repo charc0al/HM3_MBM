@@ -23,6 +23,17 @@
 					}
 				}
 			]
+		},
+		{
+			"SubEntityOperation": [
+				"26efcc7279452ad1",
+				{
+					"SetPropertyValue": {
+						"property_name": "m_fParticleSizeMax",
+						"value": 9.0
+					}
+				}
+			]
 		}
 	],
 	"patchVersion": 6

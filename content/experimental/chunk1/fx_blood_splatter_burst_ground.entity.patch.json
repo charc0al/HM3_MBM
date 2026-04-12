@@ -8,7 +8,7 @@
 				{
 					"SetPropertyValue": {
 						"property_name": "m_fDecalSizeA",
-						"value": 3.03
+						"value": 0.5
 					}
 				}
 			]
@@ -19,29 +19,7 @@
 				{
 					"SetPropertyValue": {
 						"property_name": "m_fDecalSizeB",
-						"value": 3.603
-					}
-				}
-			]
-		},
-		{
-			"SubEntityOperation": [
-				"843be51c0db0f38e",
-				{
-					"SetPropertyValue": {
-						"property_name": "m_fParticleSizeMin",
-						"value": 3.03
-					}
-				}
-			]
-		},
-		{
-			"SubEntityOperation": [
-				"843be51c0db0f38e",
-				{
-					"SetPropertyValue": {
-						"property_name": "m_fParticleSizeMax",
-						"value": 4.503
+						"value": 0.5
 					}
 				}
 			]
