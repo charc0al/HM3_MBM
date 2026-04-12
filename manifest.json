@@ -9,6 +9,60 @@
 	"contentFolders": ["content/default"],
 	"options": [
 		{
+			"name": "None",
+			"tooltip": "No change to blood level (why are you installing this mod?)",
+			"group": "Blood Level",
+			"type": "select",
+			"enabledByDefault": false
+		},
+		{
+			"name": "Realistic",
+			"tooltip": "A more realistic-ish amount of blood",
+			"group": "Blood Level",
+			"type": "select",
+			"enabledByDefault": false,
+			"contentFolders": ["content/level/realistic"]
+		},
+		{
+			"name": "Blood Money",
+			"tooltip": "Recommended setting. More than realistic, but still feels good. More like Blood Money.",
+			"group": "Blood Level",
+			"type": "select",
+			"enabledByDefault": true,
+			"contentFolders": ["content/level/bm"]
+		},
+		{
+			"name": "Tarantino",
+			"tooltip": "Excessive amounts of blood",
+			"group": "Blood Level",
+			"type": "select",
+			"enabledByDefault": false,
+			"contentFolders": ["content/level/tarantino"]
+		},
+		{
+			"name": "None",
+			"tooltip": "No change to blood pools",
+			"group": "Blood Pool Size",
+			"type": "select",
+			"enabledByDefault": false
+		},
+		{
+			"name": "Blood Money",
+			"tooltip": "Increase the blood pool size similar to how it was in Blood Money",
+			"group": "Blood Pool Size",
+			"type": "select",
+			"enabledByDefault": true,
+			"contentFolders": ["content/pool/bm"]
+		},
+		{
+			"name": "Tarantino",
+			"tooltip": "Excessively large blood pools",
+			"group": "Blood Pool Size",
+			"type": "select",
+			"enabledByDefault": false,
+			"contentFolders": ["content/pool/huge"]
+		},
+		{
 			"name": "Experimental",
 			"type": "checkbox",
 			"tooltip": "Experimental patches that I don't know what effect they have in game yet. Only check this if you wanna help me find out. If you see any changes as a result of this checkbox, let me know.",

@@ -1,0 +1,227 @@
+{
+	"tempHash": "00BCE074BB218DAA",
+	"tbluHash": "00487B3CFB329ECB",
+	"patch": [
+		{
+			"SubEntityOperation": [
+				"193951bc2ade859e",
+				{
+					"SetPropertyValue": {
+						"property_name": "m_fParticleSizeMin",
+						"value": 75.03
+					}
+				}
+			]
+		},
+		{
+			"SubEntityOperation": [
+				"193951bc2ade859e",
+				{
+					"SetPropertyValue": {
+						"property_name": "StartMinSize",
+						"value": 1.503
+					}
+				}
+			]
+		},
+		{
+			"SubEntityOperation": [
+				"193951bc2ade859e",
+				{
+					"SetPropertyValue": {
+						"property_name": "StartMaxSize",
+						"value": 4.503
+					}
+				}
+			]
+		},
+		{
+			"SubEntityOperation": [
+				"cfbf577331e4b1e4",
+				{
+					"SetPropertyValue": {
+						"property_name": "Delay time (ms)",
+						"value": 3000
+					}
+				}
+			]
+		},
+		{
+			"SubEntityOperation": [
+				"ea5692dc3a62ab72",
+				{
+					"SetPropertyValue": {
+						"property_name": "m_fParticleSizeMin",
+						"value": 60.03
+					}
+				}
+			]
+		},
+		{
+			"SubEntityOperation": [
+				"ea5692dc3a62ab72",
+				{
+					"SetPropertyValue": {
+						"property_name": "m_fTimeToLiveSecondsMax",
+						"value": 1.5
+					}
+				}
+			]
+		},
+		{
+			"SubEntityOperation": [
+				"ea5692dc3a62ab72",
+				{
+					"SetPropertyValue": {
+						"property_name": "m_fTimeToLiveSecondsMin",
+						"value": 0.75
+					}
+				}
+			]
+		},
+		{
+			"SubEntityOperation": [
+				"ea5692dc3a62ab72",
+				{
+					"SetPropertyValue": {
+						"property_name": "StartMinSize",
+						"value": 1.503
+					}
+				}
+			]
+		},
+		{
+			"SubEntityOperation": [
+				"ea5692dc3a62ab72",
+				{
+					"SetPropertyValue": {
+						"property_name": "StartMaxSize",
+						"value": 4.503
+					}
+				}
+			]
+		},
+		{
+			"SubEntityOperation": [
+				"ea5692dc3a62ab72",
+				{
+					"SetPropertyValue": {
+						"property_name": "m_fParticleSizeMax",
+						"value": 60.03
+					}
+				}
+			]
+		},
+		{
+			"SubEntityOperation": [
+				"7e8351e001ff4c26",
+				{
+					"SetPropertyValue": {
+						"property_name": "m_fDecalSizeA",
+						"value": 0.5
+					}
+				}
+			]
+		},
+		{
+			"SubEntityOperation": [
+				"7e8351e001ff4c26",
+				{
+					"SetPropertyValue": {
+						"property_name": "m_fDecalSizeB",
+						"value": 0.75
+					}
+				}
+			]
+		},
+		{
+			"SubEntityOperation": [
+				"3f5c323e2b5a297c",
+				{
+					"SetPropertyValue": {
+						"property_name": "m_fSpeedMax",
+						"value": 1.602
+					}
+				}
+			]
+		},
+		{
+			"SubEntityOperation": [
+				"3f5c323e2b5a297c",
+				{
+					"SetPropertyValue": {
+						"property_name": "m_fSpeedMin",
+						"value": 1.202
+					}
+				}
+			]
+		},
+		{
+			"SubEntityOperation": [
+				"817e26c17d48fdec",
+				{
+					"SetPropertyValue": {
+						"property_name": "m_fParticleSizeMin",
+						"value": 3.03
+					}
+				}
+			]
+		},
+		{
+			"SubEntityOperation": [
+				"817e26c17d48fdec",
+				{
+					"SetPropertyValue": {
+						"property_name": "m_fParticleSizeMax",
+						"value": 4.503
+					}
+				}
+			]
+		},
+		{
+			"SubEntityOperation": [
+				"817e26c17d48fdec",
+				{
+					"SetPropertyValue": {
+						"property_name": "m_fTimeToLiveSecondsMin",
+						"value": 1.02
+					}
+				}
+			]
+		},
+		{
+			"SubEntityOperation": [
+				"817e26c17d48fdec",
+				{
+					"SetPropertyValue": {
+						"property_name": "m_fTimeToLiveSecondsMax",
+						"value": 2.02
+					}
+				}
+			]
+		},
+		{
+			"SubEntityOperation": [
+				"e72dfbab7134666d",
+				{
+					"SetPropertyValue": {
+						"property_name": "m_fSpeedMax",
+						"value": 4.0
+					}
+				}
+			]
+		},
+		{
+			"SubEntityOperation": [
+				"e72dfbab7134666d",
+				{
+					"SetPropertyValue": {
+						"property_name": "m_fSpeedMin",
+						"value": 2.0
+					}
+				}
+			]
+		}
+	],
+	"patchVersion": 6
+}

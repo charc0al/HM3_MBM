@@ -1,0 +1,18 @@
+{
+	"tempHash": "00CEF0795A933223",
+	"tbluHash": "00BB651EFD13AFA2",
+	"patch": [
+		{
+			"SubEntityOperation": [
+				"c4f45f87154bedda",
+				{
+					"SetPropertyValue": {
+						"property_name": "m_vBulletDecalSize",
+						"value": { "x": 2.6, "y": 2.6 }
+					}
+				}
+			]
+		}
+	],
+	"patchVersion": 6
+}

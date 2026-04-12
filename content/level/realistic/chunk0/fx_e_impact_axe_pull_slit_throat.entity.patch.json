@@ -1,0 +1,249 @@
+{
+	"tempHash": "002BAD836FD668A4",
+	"tbluHash": "00EF0D8C1269C3C3",
+	"patch": [
+		{
+			"SubEntityOperation": [
+				"53c063a29c043fdd",
+				{
+					"SetPropertyValue": {
+						"property_name": "m_fParticleSizeMin",
+						"value": 150.03
+					}
+				}
+			]
+		},
+		{
+			"SubEntityOperation": [
+				"53c063a29c043fdd",
+				{
+					"SetPropertyValue": {
+						"property_name": "m_fParticleSizeMax",
+						"value": -30.03
+					}
+				}
+			]
+		},
+		{
+			"SubEntityOperation": [
+				"53c063a29c043fdd",
+				{
+					"SetPropertyValue": {
+						"property_name": "StartMaxSize",
+						"value": 10.02
+					}
+				}
+			]
+		},
+		{
+			"SubEntityOperation": [
+				"53c063a29c043fdd",
+				{
+					"SetPropertyValue": {
+						"property_name": "StartMinSize",
+						"value": 2.02
+					}
+				}
+			]
+		},
+		{
+			"SubEntityOperation": [
+				"9ae992023d6776a9",
+				{
+					"SetPropertyValue": {
+						"property_name": "m_fDecalSizeA",
+						"value": 0.1
+					}
+				}
+			]
+		},
+		{
+			"SubEntityOperation": [
+				"9ae992023d6776a9",
+				{
+					"SetPropertyValue": {
+						"property_name": "m_fDecalSizeB",
+						"value": 0.3
+					}
+				}
+			]
+		},
+		{
+			"SubEntityOperation": [
+				"09c44389b876a296",
+				{
+					"SetPropertyValue": {
+						"property_name": "m_fParticleSizeMin",
+						"value": 60.03
+					}
+				}
+			]
+		},
+		{
+			"SubEntityOperation": [
+				"09c44389b876a296",
+				{
+					"SetPropertyValue": {
+						"property_name": "m_fParticleSizeMax",
+						"value": 30.03
+					}
+				}
+			]
+		},
+		{
+			"SubEntityOperation": [
+				"09c44389b876a296",
+				{
+					"SetPropertyValue": {
+						"property_name": "StartMaxSize",
+						"value": 3.02
+					}
+				}
+			]
+		},
+		{
+			"SubEntityOperation": [
+				"09c44389b876a296",
+				{
+					"SetPropertyValue": {
+						"property_name": "StartMinSize",
+						"value": 2.02
+					}
+				}
+			]
+		},
+		{
+			"SubEntityOperation": [
+				"06c4c878296aca40",
+				{
+					"SetPropertyValue": {
+						"property_name": "m_fParticleSizeMin",
+						"value": 120.03
+					}
+				}
+			]
+		},
+		{
+			"SubEntityOperation": [
+				"06c4c878296aca40",
+				{
+					"SetPropertyValue": {
+						"property_name": "m_fParticleSizeMax",
+						"value": 30.03
+					}
+				}
+			]
+		},
+		{
+			"SubEntityOperation": [
+				"06c4c878296aca40",
+				{
+					"SetPropertyValue": {
+						"property_name": "StartMaxSize",
+						"value": 10.02
+					}
+				}
+			]
+		},
+		{
+			"SubEntityOperation": [
+				"06c4c878296aca40",
+				{
+					"SetPropertyValue": {
+						"property_name": "StartMinSize",
+						"value": 2.02
+					}
+				}
+			]
+		},
+		{
+			"SubEntityOperation": [
+				"e03fe3fb20f6cbf1",
+				{
+					"SetPropertyValue": {
+						"property_name": "m_fParticleSizeMin",
+						"value": 90.03
+					}
+				}
+			]
+		},
+		{
+			"SubEntityOperation": [
+				"e03fe3fb20f6cbf1",
+				{
+					"SetPropertyValue": {
+						"property_name": "m_fParticleSizeMax",
+						"value": 30.03
+					}
+				}
+			]
+		},
+		{
+			"SubEntityOperation": [
+				"e03fe3fb20f6cbf1",
+				{
+					"SetPropertyValue": {
+						"property_name": "StartMaxSize",
+						"value": 3.02
+					}
+				}
+			]
+		},
+		{
+			"SubEntityOperation": [
+				"e03fe3fb20f6cbf1",
+				{
+					"SetPropertyValue": {
+						"property_name": "StartMinSize",
+						"value": 2.02
+					}
+				}
+			]
+		},
+		{
+			"SubEntityOperation": [
+				"4e4fc764d7c4baf2",
+				{
+					"SetPropertyValue": {
+						"property_name": "m_fParticleSizeMin",
+						"value": 1.503
+					}
+				}
+			]
+		},
+		{
+			"SubEntityOperation": [
+				"4e4fc764d7c4baf2",
+				{
+					"SetPropertyValue": {
+						"property_name": "m_fParticleSizeMax",
+						"value": 3.03
+					}
+				}
+			]
+		},
+		{
+			"SubEntityOperation": [
+				"4e4fc764d7c4baf2",
+				{
+					"SetPropertyValue": {
+						"property_name": "m_fTimeToLiveSecondsMin",
+						"value": 0.802
+					}
+				}
+			]
+		},
+		{
+			"SubEntityOperation": [
+				"4e4fc764d7c4baf2",
+				{
+					"SetPropertyValue": {
+						"property_name": "m_fTimeToLiveSecondsMax",
+						"value": 1.202
+					}
+				}
+			]
+		}
+	],
+	"patchVersion": 6
+}
