@@ -1,0 +1,62 @@
+{
+	"tempHash": "00B84244D3461DA9",
+	"tbluHash": "00327BE90D8E6906",
+	"patch": [
+		{
+			"SubEntityOperation": [
+				"703f70f7e8967f55",
+				{
+					"SetPropertyValue": {
+						"property_name": "m_fDecalSizeA",
+						"value": 0.25
+					}
+				}
+			]
+		},
+		{
+			"SubEntityOperation": [
+				"703f70f7e8967f55",
+				{
+					"SetPropertyValue": {
+						"property_name": "m_fDecalSizeB",
+						"value": 0.5
+					}
+				}
+			]
+		},
+		{
+			"SubEntityOperation": [
+				"26efcc7279452ad1",
+				{
+					"SetPropertyValue": {
+						"property_name": "m_fParticleSizeMax",
+						"value": 9.0
+					}
+				}
+			]
+		},
+		{
+			"SubEntityOperation": [
+				"1c67e0d48f87d51d",
+				{
+					"SetPropertyValue": {
+						"property_name": "m_fFixedEmissionCount",
+						"value": 360.0
+					}
+				}
+			]
+		},
+		{
+			"SubEntityOperation": [
+				"1c67e0d48f87d51d",
+				{
+					"SetPropertyValue": {
+						"property_name": "m_fOuterConeAngle",
+						"value": 40.0
+					}
+				}
+			]
+		}
+	],
+	"patchVersion": 6
+}

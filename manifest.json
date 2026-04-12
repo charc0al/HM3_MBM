@@ -63,6 +63,20 @@
 			"contentFolders": ["content/pool/huge"]
 		},
 		{
+			"name": "Bullet",
+			"type": "checkbox",
+			"tooltip": "Dynamic bleeds from bullets",
+			"enabledByDefault": false,
+			"contentFolders": ["content/bullet"]
+		},
+		{
+			"name": "Splatter",
+			"type": "checkbox",
+			"tooltip": "Larger splatter",
+			"enabledByDefault": false,
+			"contentFolders": ["content/splatter"]
+		},
+		{
 			"name": "Experimental",
 			"type": "checkbox",
 			"tooltip": "Experimental patches that I don't know what effect they have in game yet. Only check this if you wanna help me find out. If you see any changes as a result of this checkbox, let me know.",
