@@ -1,0 +1,84 @@
+{
+	"tempHash": "00B84244D3461DA9",
+	"tbluHash": "00327BE90D8E6906",
+	"patch": [
+		{
+			"SubEntityOperation": [
+				"703f70f7e8967f55",
+				{
+					"SetPropertyValue": {
+						"property_name": "m_fDecalSizeA",
+						"value": 0.3
+					}
+				}
+			]
+		},
+		{
+			"SubEntityOperation": [
+				"703f70f7e8967f55",
+				{
+					"SetPropertyValue": {
+						"property_name": "m_fDecalSizeB",
+						"value": 0.9
+					}
+				}
+			]
+		},
+		{
+			"SubEntityOperation": [
+				"26efcc7279452ad1",
+				{
+					"SetPropertyValue": {
+						"property_name": "m_fParticleSizeMin",
+						"value": 6.06
+					}
+				}
+			]
+		},
+		{
+			"SubEntityOperation": [
+				"26efcc7279452ad1",
+				{
+					"SetPropertyValue": {
+						"property_name": "m_fParticleSizeMax",
+						"value": 18.06
+					}
+				}
+			]
+		},
+		{
+			"SubEntityOperation": [
+				"1c67e0d48f87d51d",
+				{
+					"SetPropertyValue": {
+						"property_name": "m_fFixedEmissionCount",
+						"value": 108.0
+					}
+				}
+			]
+		},
+		{
+			"SubEntityOperation": [
+				"1c67e0d48f87d51d",
+				{
+					"SetPropertyValue": {
+						"property_name": "m_fSpeedMax",
+						"value": 1.0
+					}
+				}
+			]
+		},
+		{
+			"SubEntityOperation": [
+				"1c67e0d48f87d51d",
+				{
+					"SetPropertyValue": {
+						"property_name": "m_fSpeedMin",
+						"value": 0.5
+					}
+				}
+			]
+		}
+	],
+	"patchVersion": 6
+}

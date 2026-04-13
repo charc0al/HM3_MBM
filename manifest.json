@@ -63,18 +63,74 @@
 			"contentFolders": ["content/pool/huge"]
 		},
 		{
-			"name": "Bullet",
-			"type": "checkbox",
-			"tooltip": "Dynamic bleeds from bullets. WIP, options for various levels coming soon.",
-			"enabledByDefault": false,
-			"contentFolders": ["content/bullet"]
+			"name": "Vanilla",
+			"group": "Dynamic Bullet Bleeds",
+			"type": "select",
+			"tooltip": "No changes to dynamic blood drip from gunshots",
+			"enabledByDefault": false
 		},
 		{
-			"name": "Splatter",
-			"type": "checkbox",
-			"tooltip": "Increased blood splatter, like the original More Blood. Thanks to Klesck (original author of More Blood) for his help.",
+			"name": "Realistic",
+			"group": "Dynamic Bullet Bleeds",
+			"type": "select",
+			"tooltip": "More realistic blood drips from bullets. Smaller than Blood Money setting.",
 			"enabledByDefault": false,
-			"contentFolders": ["content/splatter"]
+			"contentFolders": ["content/bullet/realistic"]
+		},
+		{
+			"name": "Blood Money",
+			"group": "Dynamic Bullet Bleeds",
+			"type": "select",
+			"tooltip": "Dripping blood from gunshots is similar to the amount found in Blood Money",
+			"enabledByDefault": false,
+			"contentFolders": ["content/bullet/bm"]
+		},
+		{
+			"name": "Tarantino",
+			"group": "Dynamic Bullet Bleeds",
+			"type": "select",
+			"tooltip": "Excessive amounts of bleeding with large splatter",
+			"enabledByDefault": false,
+			"contentFolders": ["content/bullet/tarantino"]
+		},
+		{
+			"name": "Vanilla",
+			"group": "Blood Splatter",
+			"type": "select",
+			"tooltip": "No changes to blood splatter",
+			"enabledByDefault": false,
+		},
+		{
+			"name": "Realistic",
+			"group": "Blood Splatter",
+			"type": "select",
+			"tooltip": "Increases vanilla blood splatter to about 1.5x",
+			"enabledByDefault": false,
+			"contentFolders": ["content/splatter/realistic"]
+		},
+		{
+			"name": "Blood Money",
+			"group": "Blood Splatter",
+			"type": "select",
+			"tooltip": "About 2.5x blood splatter, feels similar to Blood Money",
+			"enabledByDefault": true,
+			"contentFolders": ["content/splatter/bm"]
+		},
+		{
+			"name": "Tarantino",
+			"group": "Blood Splatter",
+			"type": "select",
+			"tooltip": "Quite large blood splatter. About 4x.",
+			"enabledByDefault": false,
+			"contentFolders": ["content/splatter/tarantino"]
+		},
+		{
+			"name": "Overdrawn at the Blood Bank",
+			"group": "Blood Splatter",
+			"type": "select",
+			"tooltip": "Comically large blood splatter. About 8x. This option inspired by Klesck's original More Blood mod.",
+			"enabledByDefault": false,
+			"contentFolders": ["content/splatter/overdrawn"]
 		},
 		{
 			"name": "Experimental",
