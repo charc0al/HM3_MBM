@@ -29,8 +29,52 @@
 				"26efcc7279452ad1",
 				{
 					"SetPropertyValue": {
+						"property_name": "m_fParticleSizeMin",
+						"value": 3.03
+					}
+				}
+			]
+		},
+		{
+			"SubEntityOperation": [
+				"26efcc7279452ad1",
+				{
+					"SetPropertyValue": {
 						"property_name": "m_fParticleSizeMax",
-						"value": 9.0
+						"value": 9.03
+					}
+				}
+			]
+		},
+		{
+			"SubEntityOperation": [
+				"1c67e0d48f87d51d",
+				{
+					"SetPropertyValue": {
+						"property_name": "m_fFixedEmissionCount",
+						"value": 72.0
+					}
+				}
+			]
+		},
+		{
+			"SubEntityOperation": [
+				"1c67e0d48f87d51d",
+				{
+					"SetPropertyValue": {
+						"property_name": "m_fSpeedMax",
+						"value": 1.0
+					}
+				}
+			]
+		},
+		{
+			"SubEntityOperation": [
+				"1c67e0d48f87d51d",
+				{
+					"SetPropertyValue": {
+						"property_name": "m_fSpeedMin",
+						"value": 0.5
 					}
 				}
 			]
