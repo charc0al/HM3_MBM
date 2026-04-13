@@ -2,23 +2,31 @@
 	"$schema": "https://raw.githubusercontent.com/atampy25/simple-mod-framework/main/Mod%20Manager/src/lib/manifest-schema.json",
 	"version": "1.1.0",
 	"id": "Charc0al.MoreBloodMelee",
-	"name": "More Blood Melee Edition",
-	"description": "Adds more blood fx to lethal melee attacks of all kinds",
+	"name": "More Blood COMPLETE",
+	"description": "Adds more blood fx to lethal melee attacks, dynamic blood drops to ballistic hits, and wall and floor splatters.",
 	"authors": ["Charc0al"],
 	"frameworkVersion": "2.33.35",
 	"contentFolders": ["content/default"],
 	"options": [
 		{
-			"name": "None",
-			"tooltip": "No change to blood level (why are you installing this mod?)",
-			"group": "Blood Level",
+			"name": "Vanilla",
+			"tooltip": "No change to melee weapon blood level",
+			"group": "Blood Level - Melee",
 			"type": "select",
 			"enabledByDefault": false
 		},
 		{
+			"name": "Just a Flesh Wound",
+			"tooltip": "The lowest setting, less than the Realistic option",
+			"group": "Blood Level - Melee",
+			"type": "select",
+			"enabledByDefault": false,
+			"contentFolders": ["content/level/fleshwound"]
+		},
+		{
 			"name": "Realistic",
 			"tooltip": "A more realistic-ish amount of blood",
-			"group": "Blood Level",
+			"group": "Blood Level - Melee",
 			"type": "select",
 			"enabledByDefault": false,
 			"contentFolders": ["content/level/realistic"]
@@ -26,7 +34,7 @@
 		{
 			"name": "Blood Money",
 			"tooltip": "Recommended setting. More than realistic, but still feels good. More like Blood Money.",
-			"group": "Blood Level",
+			"group": "Blood Level - Melee",
 			"type": "select",
 			"enabledByDefault": true,
 			"contentFolders": ["content/level/bm"]
@@ -34,7 +42,7 @@
 		{
 			"name": "Tarantino",
 			"tooltip": "Excessive amounts of blood",
-			"group": "Blood Level",
+			"group": "Blood Level - Melee",
 			"type": "select",
 			"enabledByDefault": false,
 			"contentFolders": ["content/level/tarantino"]
@@ -95,14 +103,14 @@
 		},
 		{
 			"name": "Vanilla",
-			"group": "Blood Splatter",
+			"group": "Blood Splatter (Firearms)",
 			"type": "select",
 			"tooltip": "No changes to blood splatter",
 			"enabledByDefault": false,
 		},
 		{
 			"name": "Realistic",
-			"group": "Blood Splatter",
+			"group": "Blood Splatter (Firearms)",
 			"type": "select",
 			"tooltip": "Increases vanilla blood splatter to about 1.5x",
 			"enabledByDefault": false,
@@ -110,7 +118,7 @@
 		},
 		{
 			"name": "Blood Money",
-			"group": "Blood Splatter",
+			"group": "Blood Splatter (Firearms)",
 			"type": "select",
 			"tooltip": "About 2.5x blood splatter, feels similar to Blood Money",
 			"enabledByDefault": true,
@@ -118,7 +126,7 @@
 		},
 		{
 			"name": "Tarantino",
-			"group": "Blood Splatter",
+			"group": "Blood Splatter (Firearms)",
 			"type": "select",
 			"tooltip": "Quite large blood splatter. About 4x.",
 			"enabledByDefault": false,
@@ -126,7 +134,7 @@
 		},
 		{
 			"name": "Overdrawn at the Blood Bank",
-			"group": "Blood Splatter",
+			"group": "Blood Splatter (Firearms)",
 			"type": "select",
 			"tooltip": "Comically large blood splatter. About 8x. This option inspired by Klesck's original More Blood mod.",
 			"enabledByDefault": false,
