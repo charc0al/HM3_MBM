@@ -8,7 +8,7 @@
 				{
 					"SetPropertyValue": {
 						"property_name": "m_fScale",
-						"value": 0.3
+						"value": 0.25
 					}
 				}
 			]

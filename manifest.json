@@ -40,7 +40,7 @@
 			"contentFolders": ["content/level/tarantino"]
 		},
 		{
-			"name": "None",
+			"name": "Vanilla",
 			"tooltip": "No change to blood pools",
 			"group": "Blood Pool Size",
 			"type": "select",
@@ -65,14 +65,14 @@
 		{
 			"name": "Bullet",
 			"type": "checkbox",
-			"tooltip": "Dynamic bleeds from bullets",
+			"tooltip": "Dynamic bleeds from bullets. WIP, options for various levels coming soon.",
 			"enabledByDefault": false,
 			"contentFolders": ["content/bullet"]
 		},
 		{
 			"name": "Splatter",
 			"type": "checkbox",
-			"tooltip": "Larger splatter",
+			"tooltip": "Increased blood splatter, like the original More Blood. Thanks to Klesck (original author of More Blood) for his help.",
 			"enabledByDefault": false,
 			"contentFolders": ["content/splatter"]
 		},
