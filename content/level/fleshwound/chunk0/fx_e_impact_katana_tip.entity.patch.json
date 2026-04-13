@@ -48,6 +48,28 @@
 		},
 		{
 			"SubEntityOperation": [
+				"a23dbc5b2496d66c",
+				{
+					"SetPropertyValue": {
+						"property_name": "m_fParticlesPerSecond",
+						"value": 50.0
+					}
+				}
+			]
+		},
+		{
+			"SubEntityOperation": [
+				"a23dbc5b2496d66c",
+				{
+					"SetPropertyValue": {
+						"property_name": "m_fParticlesPerSecondMax",
+						"value": 62.5
+					}
+				}
+			]
+		},
+		{
+			"SubEntityOperation": [
 				"a6d1d37cc333315c",
 				{
 					"SetPropertyValue": {
