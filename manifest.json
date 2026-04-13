@@ -11,14 +11,14 @@
 		{
 			"name": "Vanilla",
 			"tooltip": "No change to melee weapon blood level",
-			"group": "Blood Level - Melee",
+			"group": "Blood Level (Melee)",
 			"type": "select",
 			"enabledByDefault": false
 		},
 		{
 			"name": "Just a Flesh Wound",
 			"tooltip": "The lowest setting, less than the Realistic option",
-			"group": "Blood Level - Melee",
+			"group": "Blood Level (Melee)",
 			"type": "select",
 			"enabledByDefault": false,
 			"contentFolders": ["content/level/fleshwound"]
@@ -26,7 +26,7 @@
 		{
 			"name": "Realistic",
 			"tooltip": "A more realistic-ish amount of blood",
-			"group": "Blood Level - Melee",
+			"group": "Blood Level (Melee)",
 			"type": "select",
 			"enabledByDefault": false,
 			"contentFolders": ["content/level/realistic"]
@@ -34,7 +34,7 @@
 		{
 			"name": "Blood Money",
 			"tooltip": "Recommended setting. More than realistic, but still feels good. More like Blood Money.",
-			"group": "Blood Level - Melee",
+			"group": "Blood Level (Melee)",
 			"type": "select",
 			"enabledByDefault": true,
 			"contentFolders": ["content/level/bm"]
@@ -42,7 +42,7 @@
 		{
 			"name": "Tarantino",
 			"tooltip": "Excessive amounts of blood",
-			"group": "Blood Level - Melee",
+			"group": "Blood Level (Melee)",
 			"type": "select",
 			"enabledByDefault": false,
 			"contentFolders": ["content/level/tarantino"]
@@ -106,7 +106,7 @@
 			"group": "Blood Splatter (Firearms)",
 			"type": "select",
 			"tooltip": "No changes to blood splatter",
-			"enabledByDefault": false,
+			"enabledByDefault": false
 		},
 		{
 			"name": "Realistic",
@@ -139,13 +139,6 @@
 			"tooltip": "Comically large blood splatter. About 8x. This option inspired by Klesck's original More Blood mod.",
 			"enabledByDefault": false,
 			"contentFolders": ["content/splatter/overdrawn"]
-		},
-		{
-			"name": "Experimental",
-			"type": "checkbox",
-			"tooltip": "Experimental patches that I don't know what effect they have in game yet. Only check this if you wanna help me find out. If you see any changes as a result of this checkbox, let me know.",
-			"enabledByDefault": false,
-			"contentFolders": ["content/experimental"]
 		}
 	],
 	"updateCheck": "https://github.com/charc0al/HM3_MBM/releases/latest/download/updates.json"
