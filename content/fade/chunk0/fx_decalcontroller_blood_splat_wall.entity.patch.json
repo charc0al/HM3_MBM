@@ -1,0 +1,40 @@
+{
+	"tempHash": "00AB702FE12830DE",
+	"tbluHash": "00C370031A8869B6",
+	"patch": [
+		{
+			"SubEntityOperation": [
+				"aca05f5d3cae8b97",
+				{
+					"AddProperty": [
+						"m_fExpirationFadeTime",
+						{ "type": "float32", "value": 1.0 }
+					]
+				}
+			]
+		},
+		{
+			"SubEntityOperation": [
+				"aca05f5d3cae8b97",
+				{
+					"SetPropertyValue": {
+						"property_name": "m_fAutoFadeMinTime",
+						"value": 1.0
+					}
+				}
+			]
+		},
+		{
+			"SubEntityOperation": [
+				"aca05f5d3cae8b97",
+				{
+					"SetPropertyValue": {
+						"property_name": "m_fAutoFadeMaxTime",
+						"value": 2.0
+					}
+				}
+			]
+		}
+	],
+	"patchVersion": 6
+}

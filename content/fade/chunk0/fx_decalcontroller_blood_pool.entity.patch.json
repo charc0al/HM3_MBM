@@ -1,0 +1,29 @@
+{
+	"tempHash": "002F644C072A1B86",
+	"tbluHash": "009C43427227A937",
+	"patch": [
+		{
+			"SubEntityOperation": [
+				"0c20ab313f3e91aa",
+				{
+					"SetPropertyValue": {
+						"property_name": "m_fAutoFadeMinTime",
+						"value": 1.0
+					}
+				}
+			]
+		},
+		{
+			"SubEntityOperation": [
+				"0c20ab313f3e91aa",
+				{
+					"SetPropertyValue": {
+						"property_name": "m_fAutoFadeMaxTime",
+						"value": 2.0
+					}
+				}
+			]
+		}
+	],
+	"patchVersion": 6
+}

@@ -60,7 +60,7 @@
 			"group": "Blood Pool Size",
 			"type": "select",
 			"enabledByDefault": true,
-			"contentFolders": ["content/pool/bm"]
+			"contentFolders": ["content/pool/bm", "content/fade"]
 		},
 		{
 			"name": "Tarantino",
