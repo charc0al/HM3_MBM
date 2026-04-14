@@ -6,7 +6,10 @@
 			"SubEntityOperation": [
 				"3ca94327ca265f62",
 				{
-					"AddProperty": ["m_fDecalSizeA", { "type": "float32", "value": 0.75 }]
+					"SetPropertyValue": {
+						"property_name": "m_fAutoFadeMinTime",
+						"value": 4747.0
+					}
 				}
 			]
 		},
@@ -14,7 +17,10 @@
 			"SubEntityOperation": [
 				"3ca94327ca265f62",
 				{
-					"AddProperty": ["m_fDecalSizeB", { "type": "float32", "value": 1.5 }]
+					"SetPropertyValue": {
+						"property_name": "m_fAutoFadeMaxTime",
+						"value": 4747.0
+					}
 				}
 			]
 		}

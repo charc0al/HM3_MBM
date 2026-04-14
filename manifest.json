@@ -9,6 +9,14 @@
 	"contentFolders": ["content/default"],
 	"options": [
 		{
+			"name": "Persistent Blood",
+			"tooltip": "Prevent blood from disappearing based on a timer. There's still a decal limit unfortunately so spawning too much more blood will still cause old blood to disappear. I recommend using this setting as there's no real downside to it.",
+			"group": "Other",
+			"type": "checkbox",
+			"enabledByDefault": true,
+			"contentFolders": ["content/fade"]
+		},
+		{
 			"name": "Vanilla",
 			"tooltip": "No change to melee weapon blood level",
 			"group": "Blood Level (Melee)",
