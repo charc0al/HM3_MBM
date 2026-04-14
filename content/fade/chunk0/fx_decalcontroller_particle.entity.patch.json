@@ -8,7 +8,7 @@
 				{
 					"AddProperty": [
 						"m_fAutoFadeMinTime",
-						{ "type": "float32", "value": 500.0 }
+						{ "type": "float32", "value": 1000.0 }
 					]
 				}
 			]
@@ -19,7 +19,7 @@
 				{
 					"AddProperty": [
 						"m_fAutoFadeMaxTime",
-						{ "type": "float32", "value": 1000.0 }
+						{ "type": "float32", "value": 1500.0 }
 					]
 				}
 			]
