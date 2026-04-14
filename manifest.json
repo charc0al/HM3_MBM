@@ -21,7 +21,7 @@
 			"group": "Blood Level (Melee)",
 			"type": "select",
 			"enabledByDefault": false,
-			"contentFolders": ["content/level/fleshwound"]
+			"contentFolders": ["content/melee/fleshwound"]
 		},
 		{
 			"name": "Realistic",
@@ -29,7 +29,7 @@
 			"group": "Blood Level (Melee)",
 			"type": "select",
 			"enabledByDefault": false,
-			"contentFolders": ["content/level/realistic"]
+			"contentFolders": ["content/melee/realistic"]
 		},
 		{
 			"name": "Blood Money",
@@ -37,7 +37,7 @@
 			"group": "Blood Level (Melee)",
 			"type": "select",
 			"enabledByDefault": true,
-			"contentFolders": ["content/level/bm"]
+			"contentFolders": ["content/melee/bm"]
 		},
 		{
 			"name": "Tarantino",
@@ -45,7 +45,7 @@
 			"group": "Blood Level (Melee)",
 			"type": "select",
 			"enabledByDefault": false,
-			"contentFolders": ["content/level/tarantino"]
+			"contentFolders": ["content/melee/tarantino"]
 		},
 		{
 			"name": "Vanilla",
