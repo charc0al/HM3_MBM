@@ -19,7 +19,7 @@
 				{
 					"SetPropertyValue": {
 						"property_name": "m_vSplatDecalSize2",
-						"value": { "x": 2.0, "y": 3.125 }
+						"value": { "x": 2.5, "y": 2.5 }
 					}
 				}
 			]
