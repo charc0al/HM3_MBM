@@ -98,7 +98,7 @@
 			"group": "Dynamic Bullet Bleeds",
 			"type": "select",
 			"tooltip": "Dripping blood from gunshots is similar to the amount found in Blood Money",
-			"enabledByDefault": false,
+			"enabledByDefault": true,
 			"contentFolders": ["content/bullet/bm"]
 		},
 		{
