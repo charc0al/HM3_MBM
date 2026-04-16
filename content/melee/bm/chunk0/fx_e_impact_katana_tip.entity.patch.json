@@ -74,7 +74,7 @@
 				{
 					"SetPropertyValue": {
 						"property_name": "Delay time (ms)",
-						"value": 2000
+						"value": 20000
 					}
 				}
 			]

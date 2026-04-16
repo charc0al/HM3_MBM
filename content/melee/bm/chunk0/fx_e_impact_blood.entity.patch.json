@@ -19,7 +19,7 @@
 				{
 					"SetPropertyValue": {
 						"property_name": "Delay time (ms)",
-						"value": 500
+						"value": 800
 					}
 				}
 			]
@@ -30,7 +30,7 @@
 				{
 					"SetPropertyValue": {
 						"property_name": "m_fDecalSizeA",
-						"value": 0.2
+						"value": 0.08
 					}
 				}
 			]
@@ -41,7 +41,29 @@
 				{
 					"SetPropertyValue": {
 						"property_name": "m_fDecalSizeB",
-						"value": 0.4
+						"value": 0.5
+					}
+				}
+			]
+		},
+		{
+			"SubEntityOperation": [
+				"e69fca24bd1538fb",
+				{
+					"SetPropertyValue": {
+						"property_name": "m_fParticlesPerSecond",
+						"value": 50.0
+					}
+				}
+			]
+		},
+		{
+			"SubEntityOperation": [
+				"e69fca24bd1538fb",
+				{
+					"SetPropertyValue": {
+						"property_name": "m_fParticlesPerSecondMax",
+						"value": 75.0
 					}
 				}
 			]

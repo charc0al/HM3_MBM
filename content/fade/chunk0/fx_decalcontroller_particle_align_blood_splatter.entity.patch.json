@@ -7,6 +7,17 @@
 				"3ca94327ca265f62",
 				{
 					"SetPropertyValue": {
+						"property_name": "m_nDecalBuffer",
+						"value": 1
+					}
+				}
+			]
+		},
+		{
+			"SubEntityOperation": [
+				"3ca94327ca265f62",
+				{
+					"SetPropertyValue": {
 						"property_name": "m_fAutoFadeMinTime",
 						"value": 4747.0
 					}
