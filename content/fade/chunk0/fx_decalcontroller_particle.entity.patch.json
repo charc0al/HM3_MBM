@@ -6,6 +6,17 @@
 			"SubEntityOperation": [
 				"d129e2b66b75c3be",
 				{
+					"SetPropertyValue": {
+						"property_name": "m_fExpirationFadeTime",
+						"value": 2.0
+					}
+				}
+			]
+		},
+		{
+			"SubEntityOperation": [
+				"d129e2b66b75c3be",
+				{
 					"AddProperty": [
 						"m_fAutoFadeMinTime",
 						{ "type": "float32", "value": 4747.0 }

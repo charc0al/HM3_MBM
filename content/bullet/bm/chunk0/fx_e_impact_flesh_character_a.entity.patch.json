@@ -8,7 +8,7 @@
 				{
 					"SetPropertyValue": {
 						"property_name": "m_fDecalSizeA",
-						"value": 0.1
+						"value": 0.2
 					}
 				}
 			]
@@ -19,7 +19,29 @@
 				{
 					"SetPropertyValue": {
 						"property_name": "m_fDecalSizeB",
-						"value": 0.4
+						"value": 1.5
+					}
+				}
+			]
+		},
+		{
+			"SubEntityOperation": [
+				"9d9306690f131ae7",
+				{
+					"SetPropertyValue": {
+						"property_name": "m_fFixedEmissionCount",
+						"value": 10.0
+					}
+				}
+			]
+		},
+		{
+			"SubEntityOperation": [
+				"9d9306690f131ae7",
+				{
+					"SetPropertyValue": {
+						"property_name": "m_fOuterConeAngle",
+						"value": 15.0
 					}
 				}
 			]
@@ -52,7 +74,7 @@
 				{
 					"SetPropertyValue": {
 						"property_name": "m_fFixedEmissionCount",
-						"value": 100.0
+						"value": 50.0
 					}
 				}
 			]
@@ -63,7 +85,7 @@
 				{
 					"SetPropertyValue": {
 						"property_name": "m_fEmissionTimeSeconds",
-						"value": 20.0
+						"value": 15.0
 					}
 				}
 			]

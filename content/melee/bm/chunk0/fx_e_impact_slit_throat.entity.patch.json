@@ -8,7 +8,7 @@
 				{
 					"SetPropertyValue": {
 						"property_name": "m_fDecalSizeA",
-						"value": 0.15
+						"value": 0.1
 					}
 				}
 			]
@@ -19,7 +19,7 @@
 				{
 					"SetPropertyValue": {
 						"property_name": "m_fDecalSizeB",
-						"value": 0.5
+						"value": 0.7
 					}
 				}
 			]
@@ -74,7 +74,7 @@
 				{
 					"SetPropertyValue": {
 						"property_name": "m_fParticleSizeMin",
-						"value": 5.5
+						"value": 1.0
 					}
 				}
 			]
@@ -85,7 +85,7 @@
 				{
 					"SetPropertyValue": {
 						"property_name": "m_fParticleSizeMax",
-						"value": 10.0
+						"value": 5.0
 					}
 				}
 			]
