@@ -52,7 +52,7 @@
 				{
 					"SetPropertyValue": {
 						"property_name": "m_fFixedEmissionCount",
-						"value": 108.0
+						"value": 50.0
 					}
 				}
 			]
@@ -75,6 +75,17 @@
 					"SetPropertyValue": {
 						"property_name": "m_fSpeedMin",
 						"value": 0.5
+					}
+				}
+			]
+		},
+		{
+			"SubEntityOperation": [
+				"1c67e0d48f87d51d",
+				{
+					"SetPropertyValue": {
+						"property_name": "m_fEmissionTimeSeconds",
+						"value": 10.0
 					}
 				}
 			]

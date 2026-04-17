@@ -52,7 +52,7 @@
 				{
 					"SetPropertyValue": {
 						"property_name": "m_fDecalSizeA",
-						"value": 0.2
+						"value": 0.08
 					}
 				}
 			]

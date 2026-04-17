@@ -74,7 +74,7 @@
 				{
 					"SetPropertyValue": {
 						"property_name": "m_fDecalSizeA",
-						"value": 0.2
+						"value": 0.05
 					}
 				}
 			]
@@ -108,6 +108,17 @@
 					"SetPropertyValue": {
 						"property_name": "m_fParticleSizeMax",
 						"value": 4.503
+					}
+				}
+			]
+		},
+		{
+			"SubEntityOperation": [
+				"78495ed2582d394a",
+				{
+					"SetPropertyValue": {
+						"property_name": "m_vGlobalSize",
+						"value": { "x": 0.05, "y": 0.05, "z": 0.05 }
 					}
 				}
 			]
@@ -152,43 +163,6 @@
 					"SetPropertyValue": {
 						"property_name": "m_fParticleSizeMax",
 						"value": 6.03
-					}
-				}
-			]
-		},
-		{
-			"SubEntityOperation": [
-				"50b30144fe1c2d1c",
-				{
-					"SetPropertyValue": {
-						"property_name": "m_vGlobalSize",
-						"value": {
-							"x": 0.19999999552965164,
-							"y": 0.19999999552965164,
-							"z": 0.19999999552965164
-						}
-					}
-				}
-			]
-		},
-		{
-			"SubEntityOperation": [
-				"50b30144fe1c2d1c",
-				{
-					"SetPropertyValue": {
-						"property_name": "m_fParticlesPerSecond",
-						"value": 50.0
-					}
-				}
-			]
-		},
-		{
-			"SubEntityOperation": [
-				"50b30144fe1c2d1c",
-				{
-					"SetPropertyValue": {
-						"property_name": "m_fParticlesPerSecondMax",
-						"value": 100.0
 					}
 				}
 			]

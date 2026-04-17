@@ -52,7 +52,7 @@
 				{
 					"SetPropertyValue": {
 						"property_name": "m_fFixedEmissionCount",
-						"value": 100.0
+						"value": 50.0
 					}
 				}
 			]
@@ -63,7 +63,7 @@
 				{
 					"SetPropertyValue": {
 						"property_name": "m_fEmissionTimeSeconds",
-						"value": 20.0
+						"value": 10.0
 					}
 				}
 			]

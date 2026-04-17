@@ -28,7 +28,10 @@
 			"SubEntityOperation": [
 				"aca05f5d3cae8b97",
 				{
-					"AddProperty": ["m_fExpirationFadeTime", { "type": "float32", "value": 1.0 }]
+					"AddProperty": [
+						"m_fExpirationFadeTime",
+						{ "type": "float32", "value": 1.0 }
+					]
 				}
 			]
 		}
