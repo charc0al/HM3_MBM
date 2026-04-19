@@ -10,16 +10,10 @@
 						"m_aEffectSetsFrontSide",
 						[
 							{
-								"AddItemAfter": [
-									"cf60439e166a201f",
-									"cafe1bd0c5ca0f58"
-								]
+								"AddItemAfter": ["cf60439e166a201f", "cafe1bd0c5ca0f58"]
 							},
 							{
-								"AddItemAfter": [
-									"cf60439e166a201f",
-									"cafe37e2d01d297e"
-								]
+								"AddItemAfter": ["cf60439e166a201f", "cafe37e2d01d297e"]
 							}
 						]
 					]
@@ -34,16 +28,10 @@
 						"m_aEffectSetsBack",
 						[
 							{
-								"AddItemAfter": [
-									"cf60439e166a201f",
-									"cafe1bd0c5ca0f58"
-								]
+								"AddItemAfter": ["cf60439e166a201f", "cafe1bd0c5ca0f58"]
 							},
 							{
-								"AddItemAfter": [
-									"cf60439e166a201f",
-									"cafe37e2d01d297e"
-								]
+								"AddItemAfter": ["cf60439e166a201f", "cafe37e2d01d297e"]
 							}
 						]
 					]

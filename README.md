@@ -6,4 +6,4 @@ Adds more blood fx to lethal melee attacks, dynamic blood drops to ballistic hit
 
 ---
 
-`Charc0al.MoreBloodMelee` v2.2.0, by Charc0al. This README was automatically generated from the mod's manifest.
+`Charc0al.MoreBloodMelee` v2.2.1, by Charc0al. This README was automatically generated from the mod's manifest.
