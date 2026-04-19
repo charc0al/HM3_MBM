@@ -1,0 +1,99 @@
+{
+	"tempHash": "00EC98CF38410663",
+	"tbluHash": "00EF7ED04638DB92",
+	"patch": [
+		{
+			"SubEntityOperation": [
+				"7bc56a8c037183c2",
+				{
+					"PatchArrayPropertyValue": [
+						"m_aEffectSetsFrontSide",
+						[
+							{
+								"AddItemAfter": [
+									"cf60439e166a201f",
+									"cafe1bd0c5ca0f58"
+								]
+							},
+							{
+								"AddItemAfter": [
+									"cf60439e166a201f",
+									"cafe37e2d01d297e"
+								]
+							}
+						]
+					]
+				}
+			]
+		},
+		{
+			"SubEntityOperation": [
+				"7bc56a8c037183c2",
+				{
+					"PatchArrayPropertyValue": [
+						"m_aEffectSetsBack",
+						[
+							{
+								"AddItemAfter": [
+									"cf60439e166a201f",
+									"cafe1bd0c5ca0f58"
+								]
+							},
+							{
+								"AddItemAfter": [
+									"cf60439e166a201f",
+									"cafe37e2d01d297e"
+								]
+							}
+						]
+					]
+				}
+			]
+		},
+		{
+			"AddEntity": [
+				"cafe37e2d01d297e",
+				{
+					"parent": "03d2eed44ddc2fd8",
+					"name": "CCEffect_Blunt01",
+					"factory": "[modules:/zcceffectsetentity.class].pc_entitytype",
+					"blueprint": "[modules:/zcceffectsetentity.class].pc_entityblueprint",
+					"properties": {
+						"m_eEmitterEffect": {
+							"type": "ECCEmitterEffect",
+							"value": "eCCEmitterEffect_None"
+						},
+						"m_eDecalEffect": {
+							"type": "ECCDecalEffect",
+							"value": "eCCDecalEffect_None"
+						},
+						"m_nEvent": { "type": "uint32", "value": 731 }
+					}
+				}
+			]
+		},
+		{
+			"AddEntity": [
+				"cafe1bd0c5ca0f58",
+				{
+					"parent": "03d2eed44ddc2fd8",
+					"name": "CCEffect_Blunt02",
+					"factory": "[modules:/zcceffectsetentity.class].pc_entitytype",
+					"blueprint": "[modules:/zcceffectsetentity.class].pc_entityblueprint",
+					"properties": {
+						"m_eEmitterEffect": {
+							"type": "ECCEmitterEffect",
+							"value": "eCCEmitterEffect_Blunt1H"
+						},
+						"m_eDecalEffect": {
+							"type": "ECCDecalEffect",
+							"value": "eCCDecalEffect_None"
+						},
+						"m_nEvent": { "type": "uint32", "value": 732 }
+					}
+				}
+			]
+		}
+	],
+	"patchVersion": 6
+}
