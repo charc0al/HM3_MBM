@@ -52,7 +52,7 @@
 				{
 					"SetPropertyValue": {
 						"property_name": "m_fFixedEmissionCount",
-						"value": 50.0
+						"value": 40.0
 					}
 				}
 			]
@@ -86,6 +86,206 @@
 					"SetPropertyValue": {
 						"property_name": "m_fEmissionTimeSeconds",
 						"value": 10.0
+					}
+				}
+			]
+		},
+		{
+			"SubEntityOperation": [
+				"0556693d5718f767",
+				{
+					"AddInputCopyConnection": [
+						"Activate",
+						"Activate",
+						"cafe63d0886f99e3"
+					]
+				}
+			]
+		},
+		{
+			"AddEntity": [
+				"cafe63d0886f99e3",
+				{
+					"parent": "0556693d5718f767",
+					"name": "ParticleEmitterPoint_Blood_Gushing13",
+					"factory": "[modules:/zparticleemitterpointentity.class].pc_entitytype",
+					"blueprint": "[modules:/zparticleemitterpointentity.class].pc_entityblueprint",
+					"properties": {
+						"m_bEnabled": { "type": "bool", "value": false },
+						"m_fFixedEmissionCount": {
+							"type": "float32",
+							"value": 10.0
+						},
+						"m_fEmissionCameraProximity": {
+							"type": "float32",
+							"value": 20.0
+						},
+						"m_fOuterConeAngle": {
+							"type": "float32",
+							"value": 5.0
+						},
+						"m_fSpeedMax": { "type": "float32", "value": 2.0 },
+						"m_fSpeedMin": {
+							"type": "float32",
+							"value": 0.4000000059604645
+						},
+						"m_ParticleController": {
+							"type": "SEntityTemplateReference",
+							"value": "cafe7bbb222331f4"
+						},
+						"m_bUseTrackSequence": {
+							"type": "bool",
+							"value": false
+						},
+						"m_fParticlesPerSecond": {
+							"type": "float32",
+							"value": 0.0
+						},
+						"m_fParticlesPerSecondMax": {
+							"type": "float32",
+							"value": 0.0
+						},
+						"m_ParticleRender": {
+							"type": "SEntityTemplateReference",
+							"value": "12d223ab8d8b623b"
+						},
+						"m_mTransform": {
+							"type": "SMatrix43",
+							"value": {
+								"rotation": {
+									"x": -0.0,
+									"y": 0.0,
+									"z": -0.0
+								},
+								"position": {
+									"x": 0.0,
+									"y": 0.0,
+									"z": 0.039257001131772995
+								}
+							}
+						},
+						"m_fEmissionTimeSeconds": {
+							"type": "float32",
+							"value": 0.1
+						},
+						"m_eidParent": {
+							"type": "SEntityTemplateReference",
+							"value": "0556693d5718f767",
+							"postInit": true
+						}
+					}
+				}
+			]
+		},
+		{
+			"AddEntity": [
+				"cafe48e3549d89d1",
+				{
+					"parent": "0556693d5718f767",
+					"name": "ParticleDecalsSpawn05a",
+					"factory": "[modules:/zparticledecalsspawnentity.class].pc_entitytype",
+					"blueprint": "[modules:/zparticledecalsspawnentity.class].pc_entityblueprint",
+					"properties": {
+						"m_ridDecalMaterial": {
+							"type": "ZRuntimeResourceID",
+							"value": {
+								"resource": "[assembly:/_pro/effects/materials/liquid/fx_decal_liquid_blood_spots.mi].pc_mi",
+								"flag": "5F"
+							}
+						},
+						"m_nTilesX": { "type": "uint32", "value": 2 },
+						"m_nTilesY": { "type": "uint32", "value": 2 },
+						"m_ridDecalController": {
+							"type": "ZRuntimeResourceID",
+							"value": {
+								"resource": "[assembly:/_pro/effects/templates/decals/fx_decalcontrollers.template?/fx_decalcontroller_particle.entitytemplate].pc_entitytemplate",
+								"flag": "5F"
+							}
+						},
+						"m_nSkipCollisionsPerDecal": {
+							"type": "uint32",
+							"value": 0
+						},
+						"m_eSizeConstraints": {
+							"type": "EParticleDecalSpawnEntity_Constraints",
+							"value": "SIZE_RANGE"
+						},
+						"m_fDecalSizeA": {
+							"type": "float32",
+							"value": 0.05
+						},
+						"m_fDecalSizeB": {
+							"type": "float32",
+							"value": 0.5
+						},
+						"m_bUseParticleColor": {
+							"type": "bool",
+							"value": false
+						},
+						"m_fAspectRatio": {
+							"type": "float32",
+							"value": 1.0
+						}
+					}
+				}
+			]
+		},
+		{
+			"AddEntity": [
+				"cafe7bbb222331f4",
+				{
+					"parent": "0556693d5718f767",
+					"name": "ParticleController05",
+					"factory": "[modules:/zparticlecontrollerentity.class].pc_entitytype",
+					"blueprint": "[modules:/zparticlecontrollerentity.class].pc_entityblueprint",
+					"properties": {
+						"m_ParticleCollider": {
+							"type": "SEntityTemplateReference",
+							"value": "cafe48e3549d89d1"
+						},
+						"m_ParticleModifiers": {
+							"type": "TArray<SEntityTemplateReference>",
+							"value": [
+								"98fd6751065a43f9",
+								"b7d294225ff4b0ce",
+								"08820a5aefbe660b",
+								"2adac4b5e4c98b21",
+								"08d2a659060551ba"
+							]
+						},
+						"m_fParticleSizeMin": {
+							"type": "float32",
+							"value": 2.0
+						},
+						"m_fParticleSizeMax": {
+							"type": "float32",
+							"value": 4.0
+						},
+						"m_fTimeToLiveSecondsMin": {
+							"type": "float32",
+							"value": 1.5
+						},
+						"m_fTimeToLiveSecondsMax": {
+							"type": "float32",
+							"value": 2.0
+						},
+						"m_fMotionStretchFactor": {
+							"type": "float32",
+							"value": 7.0
+						},
+						"m_ParticleColorRangeStart": {
+							"type": "SColorRGB",
+							"value": "#520000"
+						},
+						"m_ParticleColorRangeEnd": {
+							"type": "SColorRGB",
+							"value": "#520000"
+						},
+						"m_bRandomFlipU": {
+							"type": "bool",
+							"value": true
+						},
+						"m_bRandomFlipV": { "type": "bool", "value": true }
 					}
 				}
 			]
