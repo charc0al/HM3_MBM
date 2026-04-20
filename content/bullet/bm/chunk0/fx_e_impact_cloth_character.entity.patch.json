@@ -166,7 +166,7 @@
 						},
 						"m_fEmissionTimeSeconds": {
 							"type": "float32",
-							"value": 0.1
+							"value": 0.2
 						},
 						"m_eidParent": {
 							"type": "SEntityTemplateReference",

@@ -19,7 +19,7 @@
 				{
 					"SetPropertyValue": {
 						"property_name": "m_fDecalSizeA",
-						"value": 0.4
+						"value": 0.15
 					}
 				}
 			]
@@ -173,7 +173,7 @@
 				{
 					"SetPropertyValue": {
 						"property_name": "m_fParticleSizeMin",
-						"value": 5.5
+						"value": 2.0
 					}
 				}
 			]
@@ -184,7 +184,18 @@
 				{
 					"SetPropertyValue": {
 						"property_name": "m_fParticleSizeMax",
-						"value": 10.0
+						"value": 8.0
+					}
+				}
+			]
+		},
+		{
+			"SubEntityOperation": [
+				"e7c582ee9ecb56fe",
+				{
+					"SetPropertyValue": {
+						"property_name": "m_fOuterConeAngle",
+						"value": 90.0
 					}
 				}
 			]
@@ -195,7 +206,7 @@
 				{
 					"SetPropertyValue": {
 						"property_name": "m_fSpeedMax",
-						"value": 6.0
+						"value": 9.0
 					}
 				}
 			]
@@ -206,7 +217,18 @@
 				{
 					"SetPropertyValue": {
 						"property_name": "m_fSpeedMin",
-						"value": 2.0
+						"value": 3.0
+					}
+				}
+			]
+		},
+		{
+			"SubEntityOperation": [
+				"e7c582ee9ecb56fe",
+				{
+					"SetPropertyValue": {
+						"property_name": "m_vGlobalSize",
+						"value": { "x": 0.08, "y": 0.08, "z": 0.08 }
 					}
 				}
 			]

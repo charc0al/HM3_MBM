@@ -8,7 +8,7 @@
 				{
 					"SetPropertyValue": {
 						"property_name": "m_fDecalSizeA",
-						"value": 0.2
+						"value": 0.15
 					}
 				}
 			]
@@ -19,7 +19,7 @@
 				{
 					"SetPropertyValue": {
 						"property_name": "m_fDecalSizeB",
-						"value": 0.8
+						"value": 0.9
 					}
 				}
 			]
@@ -37,11 +37,11 @@
 		},
 		{
 			"SubEntityOperation": [
-				"20b201d186d594ae",
+				"9d9306690f131ae7",
 				{
 					"SetPropertyValue": {
-						"property_name": "m_fParticleSizeMin",
-						"value": 3.03
+						"property_name": "m_fEmissionTimeSeconds",
+						"value": 0.5
 					}
 				}
 			]
@@ -52,7 +52,7 @@
 				{
 					"SetPropertyValue": {
 						"property_name": "m_fParticleSizeMax",
-						"value": 18.06
+						"value": 9.0
 					}
 				}
 			]
@@ -63,7 +63,7 @@
 				{
 					"SetPropertyValue": {
 						"property_name": "m_fFixedEmissionCount",
-						"value": 100.0
+						"value": 50.0
 					}
 				}
 			]
@@ -74,7 +74,7 @@
 				{
 					"SetPropertyValue": {
 						"property_name": "m_fEmissionTimeSeconds",
-						"value": 20.0
+						"value": 10.0
 					}
 				}
 			]
