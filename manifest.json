@@ -1,6 +1,6 @@
 {
 	"$schema": "https://raw.githubusercontent.com/atampy25/simple-mod-framework/main/Mod%20Manager/src/lib/manifest-schema.json",
-	"version": "2.2.1",
+	"version": "2.3.0",
 	"id": "Charc0al.MoreBloodMelee",
 	"name": "More Blood COMPLETE",
 	"description": "Adds more blood fx to lethal melee attacks, dynamic blood drops to ballistic hits, and wall and floor splatters.",

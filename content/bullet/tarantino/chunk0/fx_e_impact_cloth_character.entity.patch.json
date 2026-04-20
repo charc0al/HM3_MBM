@@ -94,11 +94,7 @@
 			"SubEntityOperation": [
 				"0556693d5718f767",
 				{
-					"AddInputCopyConnection": [
-						"Activate",
-						"Activate",
-						"cafe63d0886f99e3"
-					]
+					"AddInputCopyConnection": ["Activate", "Activate", "cafe63d0886f99e3"]
 				}
 			]
 		},
