@@ -110,6 +110,45 @@
 			"contentFolders": ["content/bullet/tarantino"]
 		},
 		{
+			"name": "Vanilla - SEE TOOLTIP",
+			"group": "Dynamic Bullet Bleeds - Drip",
+			"type": "select",
+			"tooltip": "Controls the slow dripping blood after an NPC is shot (not the initial splatter). The game can only display a maximum number of decals at once before they start disappearing, so I've added this option as a way to optimize decal usage for your preferred playstyle. Less blood drip = blood from more kills stays around longer, but the tradeoff is that you lose the cool dripping effect and blood trail of dragging bodies the more you reduce it.",
+			"enabledByDefault": false
+		},
+		{
+			"name": "None",
+			"group": "Dynamic Bullet Bleeds - Drip",
+			"type": "select",
+			"tooltip": "No blood dripping from bullet wounds. Saves decal usage, better for run and gun playstyle so blood from more kills stays around longer.",
+			"enabledByDefault": false,
+			"contentFolders": ["content/drip/none"]
+		},
+		{
+			"name": "Minimal",
+			"group": "Dynamic Bullet Bleeds - Drip",
+			"type": "select",
+			"tooltip": "Only a few drips of blood from bullet wounds.",
+			"enabledByDefault": false,
+			"contentFolders": ["content/drip/minimal"]
+		},
+		{
+			"name": "Balanced",
+			"group": "Dynamic Bullet Bleeds - Drip",
+			"type": "select",
+			"tooltip": "A balanced amouint of drynamic blood drips, so you can still get the full effect without wasting too many decals.",
+			"enabledByDefault": true,
+			"contentFolders": ["content/drip/balanced"]
+		},
+		{
+			"name": "Long",
+			"group": "Dynamic Bullet Bleeds - Drip",
+			"type": "select",
+			"tooltip": "Blood will drip for a long time from bullet wounds. Looks best for individual kills and Silent Assassin playstyle, but will use up decals quickly and blood will disappear more easily for multiple kills.",
+			"enabledByDefault": false,
+			"contentFolders": ["content/drip/balanced"]
+		},
+		{
 			"name": "Vanilla",
 			"group": "Blood Splatter (Firearms)",
 			"type": "select",

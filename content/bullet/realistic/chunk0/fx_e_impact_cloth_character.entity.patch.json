@@ -51,17 +51,6 @@
 				"1c67e0d48f87d51d",
 				{
 					"SetPropertyValue": {
-						"property_name": "m_fFixedEmissionCount",
-						"value": 108.0
-					}
-				}
-			]
-		},
-		{
-			"SubEntityOperation": [
-				"1c67e0d48f87d51d",
-				{
-					"SetPropertyValue": {
 						"property_name": "m_fSpeedMax",
 						"value": 1.0
 					}
