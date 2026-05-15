@@ -124,7 +124,7 @@
 						},
 						"m_fOuterConeAngle": {
 							"type": "float32",
-							"value": 5.0
+							"value": 15.0
 						},
 						"m_fSpeedMax": { "type": "float32", "value": 2.0 },
 						"m_fSpeedMin": { "type": "float32", "value": 0.4 },
@@ -309,7 +309,7 @@
 						},
 						"m_fOuterConeAngle": {
 							"type": "float32",
-							"value": 5.0
+							"value": 15.0
 						},
 						"m_fSpeedMax": { "type": "float32", "value": 3.0 },
 						"m_fSpeedMin": { "type": "float32", "value": 0.7 },
@@ -350,7 +350,7 @@
 						},
 						"m_fEmissionTimeSeconds": {
 							"type": "float32",
-							"value": 0.2
+							"value": 0.1
 						},
 						"m_eidParent": {
 							"type": "SEntityTemplateReference",
@@ -381,7 +381,7 @@
 						},
 						"m_fOuterConeAngle": {
 							"type": "float32",
-							"value": 5.0
+							"value": 15.0
 						},
 						"m_fSpeedMax": { "type": "float32", "value": 1.4 },
 						"m_fSpeedMin": { "type": "float32", "value": 0.4 },
