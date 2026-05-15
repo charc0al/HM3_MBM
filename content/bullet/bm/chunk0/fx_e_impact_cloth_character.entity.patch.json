@@ -124,7 +124,7 @@
 						},
 						"m_fOuterConeAngle": {
 							"type": "float32",
-							"value": 15.0
+							"value": 30.0
 						},
 						"m_fSpeedMax": { "type": "float32", "value": 2.0 },
 						"m_fSpeedMin": { "type": "float32", "value": 0.4 },
@@ -254,11 +254,11 @@
 						},
 						"m_fParticleSizeMin": {
 							"type": "float32",
-							"value": 1.5
+							"value": 3.0
 						},
 						"m_fParticleSizeMax": {
 							"type": "float32",
-							"value": 3.0
+							"value": 6.0
 						},
 						"m_fTimeToLiveSecondsMin": {
 							"type": "float32",
@@ -309,7 +309,7 @@
 						},
 						"m_fOuterConeAngle": {
 							"type": "float32",
-							"value": 15.0
+							"value": 30.0
 						},
 						"m_fSpeedMax": { "type": "float32", "value": 3.0 },
 						"m_fSpeedMin": { "type": "float32", "value": 0.7 },
@@ -381,7 +381,7 @@
 						},
 						"m_fOuterConeAngle": {
 							"type": "float32",
-							"value": 15.0
+							"value": 30.0
 						},
 						"m_fSpeedMax": { "type": "float32", "value": 1.4 },
 						"m_fSpeedMin": { "type": "float32", "value": 0.4 },
@@ -518,11 +518,11 @@
 						},
 						"m_fParticleSizeMin": {
 							"type": "float32",
-							"value": 2.0
+							"value": 4.0
 						},
 						"m_fParticleSizeMax": {
 							"type": "float32",
-							"value": 4.0
+							"value": 12.0
 						},
 						"m_fTimeToLiveSecondsMin": {
 							"type": "float32",
