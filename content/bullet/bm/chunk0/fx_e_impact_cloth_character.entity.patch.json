@@ -72,11 +72,7 @@
 			"SubEntityOperation": [
 				"0556693d5718f767",
 				{
-					"AddInputCopyConnection": [
-						"Activate",
-						"Activate",
-						"cafe63d0886f99e3"
-					]
+					"AddInputCopyConnection": ["Activate", "Activate", "cafe63d0886f99e3"]
 				}
 			]
 		},
@@ -84,11 +80,7 @@
 			"SubEntityOperation": [
 				"0556693d5718f767",
 				{
-					"AddInputCopyConnection": [
-						"Activate",
-						"Activate",
-						"cafed61e20aa55b0"
-					]
+					"AddInputCopyConnection": ["Activate", "Activate", "cafed61e20aa55b0"]
 				}
 			]
 		},
@@ -96,11 +88,7 @@
 			"SubEntityOperation": [
 				"0556693d5718f767",
 				{
-					"AddInputCopyConnection": [
-						"Activate",
-						"Activate",
-						"cafe5cdc754fdb79"
-					]
+					"AddInputCopyConnection": ["Activate", "Activate", "cafe5cdc754fdb79"]
 				}
 			]
 		},
