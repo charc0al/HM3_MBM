@@ -1,2 +1,5 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+
+/sdk_plugin_src export-ignore
+/sdk_plugin_src/** export-ignore

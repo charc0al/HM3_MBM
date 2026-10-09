@@ -1,2 +1,4 @@
 .releaserc
 node_modules
+
+/sdk_plugin_src/build/
