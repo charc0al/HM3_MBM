@@ -16,9 +16,20 @@
 #include "CallSites.h"
 #include "NativeBridge.h"
 
+// Startup coordinator for a larger *existing* native decal manager. Two changes
+// must agree: Capacity.h patches its allocation/layout/retirement constants, and
+// NativeBridge.h supplies GPU buffers too large for the generic page allocator.
+// Rendering, slot allocation, fading and list maintenance remain native code.
+// All native addresses are RVAs in the single executable identified by the hash;
+// adding the loaded module base handles ASLR, not compatibility with other builds.
 namespace {
 constexpr size_t ManagerPointerRva = 0x3194d58;
 
+// The original call sites are five-byte E8 rel32 instructions. The DLL can load
+// outside their +/-2 GiB reach, so place tiny tail-jump thunks near the EXE and
+// let each thunk jump to a full 64-bit DLL address. This preserves the native
+// return address, argument registers and stack arguments (Windows x64 ABI).
+// Order is positional: these targets must match NativeCallSites() exactly.
 unsigned char* PrepareThunks(unsigned char* base,size_t imageSize) {
     const auto start=(reinterpret_cast<size_t>(base)+imageSize+0xffff)&~size_t{0xffff};
     const auto end=reinterpret_cast<size_t>(base)+0x70000000;
@@ -51,6 +62,9 @@ unsigned char* PrepareThunks(unsigned char* base,size_t imageSize) {
     return block;
 }
 
+// Build identification is deliberately stricter than a version string. The
+// on-disk hash identifies the researched binary; Init also checks in-memory
+// instructions to reject conflicting patches applied by another plugin.
 std::string ExecutableSha256() {
     std::array<wchar_t, 32768> path{};
     const auto length = GetModuleFileNameW(nullptr, path.data(), static_cast<DWORD>(path.size()));
@@ -101,6 +115,8 @@ template<typename T> std::optional<T> Read(size_t address) {
 
 // Open every affected code page before changing any instruction. A protection
 // failure therefore leaves the complete native layout unchanged.
+// This is a startup-only operation, not an atomic live patch: the manager must
+// not exist yet, and its native paths must not be running during these writes.
 bool Apply(unsigned char* base, const std::array<PatchSite, 35>& sites, uint32_t multiplier,unsigned char* thunks) {
     const auto calls=NativeCallSites();
     std::array<int32_t,4> displacements{};
@@ -117,6 +133,9 @@ bool Apply(unsigned char* base, const std::array<PatchSite, 35>& sites, uint32_t
         for (auto page=address/system.dwPageSize*system.dwPageSize;
              page<=(address+4)/system.dwPageSize*system.dwPageSize;page+=system.dwPageSize) pages.emplace(page,0);
     }
+    // Layout fields include constructor allocations, destructor loop bounds and
+    // relocated bitset operands. Patching just the visible limits would leave
+    // native accesses addressing the old allocation or the wrong bitset.
     for (const auto& site : sites) {
         const auto address = reinterpret_cast<size_t>(base + site.rva + site.byteOffset);
         for (auto page = address / system.dwPageSize * system.dwPageSize;
@@ -141,6 +160,8 @@ bool Apply(unsigned char* base, const std::array<PatchSite, 35>& sites, uint32_t
         const auto value = Capacity::Replacement(site, multiplier);
         std::memcpy(base + site.rva + site.byteOffset, &value, sizeof(value));
     }
+    // Keep the CALL opcode and replace only its displacement. Both release
+    // sites use the same bridge, covering destruction and upload migration.
     for (size_t i=0;i<calls.size();++i) {
         std::memcpy(base+calls[i].rva+1,&displacements[i],sizeof(int32_t));
     }
@@ -180,6 +201,8 @@ public:
             Logger::Warn("[MoreBloodDecals] Unsupported executable SHA-256 {}; no changes applied.", digest);
             return;
         }
+        // Constants describe the allocation the constructor is about to make.
+        // An already-created manager cannot be resized by changing its code.
         base_ = reinterpret_cast<unsigned char*>(GetModuleHandleW(nullptr));
         const auto manager = Read<size_t>(reinterpret_cast<size_t>(base_) + ManagerPointerRva);
         Diagnostics::Line(fmt::format("Executable base={:X}; pre-patch manager={:X}",reinterpret_cast<size_t>(base_),manager.value_or(0)));
@@ -190,6 +213,8 @@ public:
         const auto dos = reinterpret_cast<const IMAGE_DOS_HEADER*>(base_);
         const auto nt = reinterpret_cast<const IMAGE_NT_HEADERS64*>(base_ + dos->e_lfanew);
         const size_t imageSize = nt->OptionalHeader.SizeOfImage;
+        // Validate complete instructions, not just the four-byte operands we
+        // replace. All guards must pass before publishing any modified code.
         const auto sites = PatchSites();
         for (const auto& site : sites) {
             if (site.rva + site.expected.size() > imageSize ||
@@ -204,6 +229,9 @@ public:
                 return;
             }
         }
+        // Native calls will enter static DLL functions without an IPluginInterface
+        // instance. Pinning keeps those functions and their state valid even if
+        // the SDK unloads the plugin object; live disable is intentionally unsupported.
         HMODULE pinned=nullptr;
         if (!GetModuleHandleExW(GET_MODULE_HANDLE_EX_FLAG_FROM_ADDRESS|GET_MODULE_HANDLE_EX_FLAG_PIN,
             reinterpret_cast<LPCWSTR>(&NativeBridge::AllocateGeometry),&pinned)) {
@@ -224,12 +252,16 @@ public:
             return;
         }
         applied_ = true;
+        Diagnostics::nativeBase.store(reinterpret_cast<uintptr_t>(base_));
         Diagnostics::Line(fmt::format("Applied {} capacity sites and {} native bridges: {}x retention, {} slots, category/global soft counts {}/{}, hard global {}, geometry {} MiB; bridge module pinned until exit",
             sites.size(),NativeCallSites().size(),multiplier_,Capacity::Slots(multiplier_),600U*multiplier_,1200U*multiplier_,Capacity::HardCount(multiplier_),2U*multiplier_));
         Logger::Info("[MoreBloodDecals] {}x retention test: {} slots, {} MiB geometry; dedicated large buffers. In-game validation required.",
             multiplier_,Capacity::Slots(multiplier_),2U*multiplier_);
     }
 
+    // Confirm the native constructor actually used the patched dimensions.
+    // These are CPU-side descriptors; dedicated GPU allocation is lazy and is
+    // confirmed separately when the first decal reaches AllocateGeometry.
     void OnEngineInitialized() override {
         Diagnostics::Line(fmt::format("OnEngineInitialized: applied={}",applied_));
         if (!applied_) return;
@@ -239,6 +271,7 @@ public:
             return;
         }
         const auto slots = Read<size_t>(*manager + 8);
+        // The slot allocation's eight-byte array header includes sentinel slot 0.
         const auto count = slots && *slots ? Read<uint64_t>(*slots - 8) : std::nullopt;
         const auto indices = Read<uint32_t>(*manager + 0x64);
         const auto vertices = Read<uint32_t>(*manager + 0x7c);

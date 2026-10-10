@@ -2,6 +2,10 @@
 
 This is the canonical source for the companion DLL in `../sdk_plugin`. Build 4 at multiplier 50 has been confirmed in-game to retain many more decals. Further development of this mod belongs in `Charc0al.MoreBloodCOMPLETE`.
 
+Build 5 adds sampled counters for the separate shared render-object registry and guarded cleanup-reference evidence in the exception handler. It aggregates retirement selections to avoid flushing on every frame under pressure. Capacity constants, resource ownership and retirement policy are unchanged. The build and isolated diagnostics pass; in-game minigun stress validation remains pending. Research and the native exhausted-registry reproduction are preserved in `agentTools/MoreBloodMelee/stress-20261010` and `validate_render_registry_exhaustion.py`.
+
+Reading order: `MoreBloodDecals.cpp` coordinates startup guards, patch publication and lifetime; `Capacity.h` defines the coherent native allocation/layout model; `NativeBridge.h` connects the original native calls to dedicated GPU storage and diagnostics; `NativeResources.h` defines the allocation ABI and ownership boundary; `Diagnostics.h` preserves failure evidence. The generated `PatchSites.h` and `CallSites.h` describe the exact executable instructions those mechanisms depend on. Inline comments focus on the reverse-engineered contracts and why the changes must stay coordinated.
+
 Build prerequisites: Visual Studio 2022 C++ Build Tools, a Windows SDK, CMake, and the ZHMModSDK **4.1.1 developer package**. Extract the SDK outside this repository and pass its location as `SDK_DIR`. SDK headers/libraries are external dependencies; the compatibility header forwards the SDK's DirectX include to the Windows SDK.
 
 From this repository in the current workspace:

@@ -1,6 +1,6 @@
 # More Blood decal capacity companion
 
-Build 4 is a **50x retention companion**. The user confirmed that it retains many more decals in-game. It also passes native-code emulation and a separate actual D3D12 buffer allocation/upload/readback test. Broader save/load, scene-transition and stability testing remains useful.
+Build 5 keeps the **50x retention** behavior confirmed in-game with build 4. It adds diagnostics for a separate shared render-object registry and reduces disk logging during capacity pressure. Build 5 compiles and passes isolated diagnostic tests; its new telemetry still needs an in-game stress test. The capacity/resource implementation previously passed native-code emulation and a separate actual D3D12 buffer allocation/upload/readback test.
 
 The companion enlarges the dynamic decal manager used by blood and bullet impacts. At the default setting it provides:
 
@@ -33,6 +33,6 @@ Multipliers 1..50 are accepted; one uses vanilla capacity. Geometry and soft ret
 
 Test repeated shots, NPC blood, glass impacts, save/load, mission restart and map changes. Compare the first marks against the previous build. Native initialization, free-list traversal, retirement, high-ID geometry insertion, upload and cleanup pass offline checks. Separate real GPU tests verify the tail regions of both full-size buffers; they do not prove live game integration.
 
-`Retail/MoreBloodDecals.diagnostic.log` records startup, actual allocations, dedicated buffer creation, live pool usage every five seconds, controller fade settings, capacity-triggered retirement and exception details. Entries flush immediately; no reports are uploaded. Retain the log if marks disappear unexpectedly or the game crashes. `ZHMModLoader.log` also reports runtime allocation confirmation.
+`Retail/MoreBloodDecals.diagnostic.log` records startup, actual allocations, dedicated buffer creation, live pool usage every five seconds, controller fade settings, capacity-triggered retirement and exception details. Shared render-object usage is sampled twice per second and reported every five seconds with its sampled high-water mark. This allocator includes non-decal render objects and is separate from the enlarged decal slots. Retirement reports aggregate selections at most once per second per category; selections can repeatedly include a decal already fading. Entries flush immediately; no reports are uploaded. Retain the log if marks disappear unexpectedly or the game crashes. `ZHMModLoader.log` also reports runtime allocation confirmation.
 
 Buildable source is in `../sdk_plugin_src` in the `Charc0al.MoreBloodCOMPLETE` repository. Research, validators and backups remain under the workspace's `agentTools/MoreBloodMelee`. Third-party notices are in `licenses`.

@@ -6,16 +6,32 @@
 #include <atomic>
 
 namespace NativeBridge {
+// This state outlives the SDK plugin object because the module is pinned.
+// The resource mutex serializes our lazy descriptor publication; native code
+// remains responsible for synchronizing its own decal lists and geometry pools.
 inline unsigned char* base=nullptr;
 inline uint32_t multiplier=0;
 inline std::mutex resourceMutex;
 inline std::atomic<uint64_t> seenControllers=0;
 inline uint64_t lastStats=0;
 inline uint32_t allocationFailures=0;
+inline Diagnostics::RetirementWindow retirementWindows[2];
+inline uint64_t lastRegistrySample=0;
+inline uint32_t registryHighWater=0;
+inline Diagnostics::RegistryUsage registryUsage;
 
+// Offsets are researched layouts for the hash-guarded EXE, not SDK contracts.
+// Manager: +8 slots; +0x30/+0x3C category lists; +0x48/+0x50 index/vertex objects.
+// Each category is {uint16 head, uint16 count, uint32 triangles, uint32 bytes}.
+// Buffer: +0x10 capacity bytes; +0x28 allocation descriptor; +0x60 GPU address.
 template<typename T> inline T& Field(void* object,size_t offset) {
     return *reinterpret_cast<T*>(static_cast<unsigned char*>(object)+offset);
 }
+// Allocate on first use, when the renderer/device exist. Pre-populating the
+// descriptor makes native upload bypass its fixed-page allocation branch while
+// retaining native command submission, barriers and offset calculations. Buffers
+// <=4 MiB continue to use vanilla's path. The first buffer can survive a failure
+// creating the second; a later attempt skips it and retries the missing buffer.
 inline bool EnsureBuffers(void* manager) {
     std::lock_guard<std::mutex> guard(resourceMutex);
     auto* renderer=*reinterpret_cast<unsigned char**>(base+0x3194b80);
@@ -40,6 +56,8 @@ inline bool EnsureBuffers(void* manager) {
 
 // This call occurs before any geometry blocks are reserved. If allocation
 // fails, vanilla's existing false-return path returns the unused slot safely.
+// Only the specific decal caller is redirected; the native allocator itself
+// remains untouched and is called with its original ABI and arguments.
 inline bool AllocateGeometry(void* manager,void** indices,void** vertices,uint16_t slot,
                              bool category,uint32_t indexCount,uint32_t vertexBytes,uint32_t stride) {
     if (!EnsureBuffers(manager)) return false;
@@ -49,6 +67,10 @@ inline bool AllocateGeometry(void* manager,void** indices,void** vertices,uint16
 
 // The native descriptor destructor is already deferred through the renderer's
 // retirement queue. Only its final release operation changes for owned buffers.
+// Both final destruction and upload migration enter here. The private marker
+// prevents our dedicated resources from reaching vanilla's page/free-list logic;
+// everything else is delegated, including allocations from unrelated buffers
+// that happen to use these same native buffer methods.
 inline void ReleaseGeometry(void* renderer,NativeResources::Allocation* allocation) {
     if (NativeResources::Release(*allocation)) {
         Diagnostics::Line("Dedicated decal buffer released by native resource retirement.");
@@ -58,6 +80,9 @@ inline void ReleaseGeometry(void* renderer,NativeResources::Allocation* allocati
     reinterpret_cast<Function>(base+0x11e4ec0)(renderer,allocation);
 }
 
+// Controller IDs identify a separate 64-entry metadata pool, not decal capacity
+// or resource hashes. Log the first observation per ID to expose fade policies;
+// this is a diagnostic snapshot, not tracking of later parameter changes/reuse.
 inline void LogController(void* manager,uint16_t slot,uint32_t category) {
     if (!slot) return;
     auto* slots=Field<unsigned char*>(manager,8);
@@ -71,6 +96,12 @@ inline void LogController(void* manager,uint16_t slot,uint32_t category) {
         id,category,Field<float>(controller,0x18),Field<float>(controller,0x20),Field<float>(controller,0x24)));
 }
 
+// Observability wrapper only: capacity policy is still the patched native
+// function. Its caller holds the manager's critical section and invokes us for
+// each of two categories sharing global budgets. stats is an in/out aggregate:
+// [geometryBytes, count, retiredCount, retiredTriangles, retiredGeometryBytes].
+// Retirement schedules fading (or immediate expiry under hard pressure), so
+// retiredCount is not necessarily the number of GPU slots freed this frame.
 inline void Retire(void* manager,uint32_t* stats,uint32_t category) {
     const auto removedBefore=stats[2];
     const auto countBefore=stats[1];
@@ -79,11 +110,23 @@ inline void Retire(void* manager,uint32_t* stats,uint32_t category) {
     const auto categoryBytes=Field<uint32_t>(manager,0x38+category*12);
     const auto triangles=Field<uint32_t>(manager,0x34+category*12);
     const auto now=GetTickCount64();
+    // Observe the separate global render-object allocator twice per second.
+    // Never acquire its lock while the decal manager's lock is held. The peak
+    // is sampled, so short bursts may still be caught only by exception capture.
+    if (category==0 && now-lastRegistrySample>=500) {
+        lastRegistrySample=now;
+        if (Diagnostics::Registry(registryUsage) && registryUsage.used>registryHighWater)
+            registryHighWater=registryUsage.used;
+    }
     if (category==0 && now-lastStats>=5000) {
         lastStats=now;
         Diagnostics::Line(fmt::format("Pool usage: slots={}/{}; geometry={} / {} bytes; categories={}/{}; count-soft={}, geometry-soft={} bytes",
             countBefore,Capacity::Slots(multiplier),bytesBefore,0x200000U*multiplier,
             Field<uint16_t>(manager,0x32),Field<uint16_t>(manager,0x3e),1200U*multiplier,0x100000U*multiplier));
+        Diagnostics::Line(fmt::format("Shared render registry: used={}, capacity={}, sampledHighWater={} (includes non-decal render objects)",
+            registryUsage.used,registryUsage.capacity,registryHighWater));
+        // Sampling whole lists catches controllers hidden behind another type
+        // at the head. Bound traversal and run once per five seconds, not per decal.
         auto* slots=Field<unsigned char*>(manager,8);
         for (uint32_t list=0;list<2;++list) {
             auto slot=Field<uint16_t>(manager,0x30+list*12);
@@ -97,11 +140,16 @@ inline void Retire(void* manager,uint32_t* stats,uint32_t category) {
     LogController(manager,head,category);
     using Function=void(*)(void*,uint32_t*,uint32_t);
     reinterpret_cast<Function>(base+0x12d6220)(manager,stats,category);
-    if (stats[2]!=removedBefore) {
-        Diagnostics::Line(fmt::format("Capacity retirement: category={}, retired={}, globalCount={}, categoryCount={}, geometryBytes={}, categoryBytes={}, triangles={}; countPressure={}, geometryPressure={}, trianglePressure={}",
-            category,stats[2]-removedBefore,countBefore,categoryCount,bytesBefore,categoryBytes,triangles,
+    // Pressure flags describe the pre-call snapshot and can overlap. Timed
+    // auto-fade is handled elsewhere and does not appear as capacity retirement.
+    auto& window=retirementWindows[category];
+    window.Add(stats[2]-removedBefore,countBefore,bytesBefore);
+    if (window.Due(now)) {
+        Diagnostics::Line(fmt::format("Capacity retirement window: category={}, calls={}, selections={}, peakCount={}, peakGeometryBytes={}; latest globalCount={}, categoryCount={}, geometryBytes={}, categoryBytes={}, triangles={}; countPressure={}, geometryPressure={}, trianglePressure={}",
+            category,window.calls,window.selections,window.maxCount,window.maxBytes,countBefore,categoryCount,bytesBefore,categoryBytes,triangles,
             (categoryCount>600U*multiplier && countBefore>1200U*multiplier)||countBefore>Capacity::HardCount(multiplier),
             categoryBytes>0x80000U*multiplier && bytesBefore>0x100000U*multiplier,triangles>100000U*multiplier));
+        window.Reset(now);
     }
 }
 }

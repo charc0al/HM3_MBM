@@ -1,4 +1,7 @@
 // Generated native call guards.
+// Each row guards one original E8 rel32 CALL before its displacement is replaced.
+// Order must match PrepareThunks targets: allocation, two releases, retirement.
+// Calls route through nearby absolute-jump thunks; the native callees stay intact.
 #pragma once
 #include <array>
 #include <cstddef>
