@@ -2,6 +2,7 @@
 #include "NativeResources.h"
 #include "Capacity.h"
 #include "Diagnostics.h"
+#include "PressurePolicy.h"
 #include <mutex>
 #include <atomic>
 
@@ -19,6 +20,12 @@ inline Diagnostics::RetirementWindow retirementWindows[2];
 inline uint64_t lastRegistrySample=0;
 inline uint32_t registryHighWater=0;
 inline Diagnostics::RegistryUsage registryUsage;
+// All policy state is protected by the native manager's recursive critical
+// section. Allocation takes it explicitly; the update/retirement caller holds it.
+inline PressurePolicy::Admission admission;
+inline bool sharedPressure=false;
+inline bool geometryFailurePending=false, geometryRecovery=false;
+inline uint64_t registryRejected=0, rateRejected=0, allocationRejected=0, pressureScheduled=0;
 
 // Offsets are researched layouts for the hash-guarded EXE, not SDK contracts.
 // Manager: +8 slots; +0x30/+0x3C category lists; +0x48/+0x50 index/vertex objects.
@@ -60,9 +67,26 @@ inline bool EnsureBuffers(void* manager) {
 // remains untouched and is called with its original ABI and arguments.
 inline bool AllocateGeometry(void* manager,void** indices,void** vertices,uint16_t slot,
                              bool category,uint32_t indexCount,uint32_t vertexBytes,uint32_t stride) {
-    if (!EnsureBuffers(manager)) return false;
+    auto* lock=reinterpret_cast<CRITICAL_SECTION*>(static_cast<unsigned char*>(manager)+0x88);
+    EnterCriticalSection(lock);
+    // The exact EXE/layout is guarded at startup. These aligned native counters
+    // are observations, not reservations; the large free margin covers other
+    // renderer threads. Check every admission, not just five-second telemetry.
+    const auto used=*reinterpret_cast<volatile uint32_t*>(base+0x3194a00);
+    const auto capacity=*reinterpret_cast<volatile uint32_t*>(base+0x3194a04);
+    const uint64_t bytes=((static_cast<uint64_t>(indexCount)*2+511)&~uint64_t{511})+
+        ((static_cast<uint64_t>(vertexBytes)+stride+511)&~uint64_t{511});
+    bool allowed=true;
+    if (!PressurePolicy::CanAdmit(used,capacity)) { ++registryRejected; allowed=false; }
+    else if (!admission.Allow(GetTickCount64(),bytes)) { ++rateRejected; allowed=false; }
+    else if (!EnsureBuffers(manager)) { ++allocationRejected; allowed=false; }
     using Function=bool(*)(void*,void**,void**,uint16_t,bool,uint32_t,uint32_t,uint32_t);
-    return reinterpret_cast<Function>(base+0x12d5800)(manager,indices,vertices,slot,category,indexCount,vertexBytes,stride);
+    // false takes the caller's existing unused-slot return/temporary cleanup
+    // route, before geometry reservation and before persistent render cloning.
+    const bool result=allowed && reinterpret_cast<Function>(base+0x12d5800)(manager,indices,vertices,slot,category,indexCount,vertexBytes,stride);
+    if (allowed && !result) { ++allocationRejected; geometryFailurePending=true; }
+    LeaveCriticalSection(lock);
+    return result;
 }
 
 // The native descriptor destructor is already deferred through the renderer's
@@ -96,8 +120,7 @@ inline void LogController(void* manager,uint16_t slot,uint32_t category) {
         id,category,Field<float>(controller,0x18),Field<float>(controller,0x20),Field<float>(controller,0x24)));
 }
 
-// Observability wrapper only: capacity policy is still the patched native
-// function. Its caller holds the manager's critical section and invokes us for
+// Its caller holds the manager's critical section and invokes us for
 // each of two categories sharing global budgets. stats is an in/out aggregate:
 // [geometryBytes, count, retiredCount, retiredTriangles, retiredGeometryBytes].
 // Retirement schedules fading (or immediate expiry under hard pressure), so
@@ -110,6 +133,17 @@ inline void Retire(void* manager,uint32_t* stats,uint32_t category) {
     const auto categoryBytes=Field<uint32_t>(manager,0x38+category*12);
     const auto triangles=Field<uint32_t>(manager,0x34+category*12);
     const auto now=GetTickCount64();
+    if (category==0) {
+        admission.NewUpdate();
+        const auto used=*reinterpret_cast<volatile uint32_t*>(base+0x3194a00);
+        const auto capacity=*reinterpret_cast<volatile uint32_t*>(base+0x3194a04);
+        sharedPressure=PressurePolicy::UpdatePressure(sharedPressure,used,capacity);
+        // Independent index/vertex exhaustion or fragmentation can reject an
+        // allocation below the combined byte budget. Free a bounded old batch
+        // next update rather than repeatedly retrying a permanently full pool.
+        geometryRecovery=geometryFailurePending;
+        geometryFailurePending=false;
+    }
     // Observe the separate global render-object allocator twice per second.
     // Never acquire its lock while the decal manager's lock is held. The peak
     // is sampled, so short bursts may still be caught only by exception capture.
@@ -125,12 +159,14 @@ inline void Retire(void* manager,uint32_t* stats,uint32_t category) {
             Field<uint16_t>(manager,0x32),Field<uint16_t>(manager,0x3e),1200U*multiplier,0x100000U*multiplier));
         Diagnostics::Line(fmt::format("Shared render registry: used={}, capacity={}, sampledHighWater={} (includes non-decal render objects)",
             registryUsage.used,registryUsage.capacity,registryHighWater));
-        // Sampling whole lists catches controllers hidden behind another type
-        // at the head. Bound traversal and run once per five seconds, not per decal.
+        Diagnostics::Line(fmt::format("Pressure control totals: sharedPressure={}, geometryRecovery={}, registryRejected={}, rateRejected={}, allocationRejected={}, expiryScheduled={}",
+            sharedPressure,geometryRecovery,registryRejected,rateRejected,allocationRejected,pressureScheduled));
+        // Sample a bounded prefix for controllers hidden behind the head;
+        // scanning tens of thousands of slots is unnecessary telemetry work.
         auto* slots=Field<unsigned char*>(manager,8);
         for (uint32_t list=0;list<2;++list) {
             auto slot=Field<uint16_t>(manager,0x30+list*12);
-            for (uint32_t visited=0;slot && visited<Capacity::Slots(multiplier);++visited) {
+            for (uint32_t visited=0;slot && visited<128;++visited) {
                 LogController(manager,slot,list);
                 slot=Field<uint16_t>(slots+slot*192,0x16);
             }
@@ -138,17 +174,16 @@ inline void Retire(void* manager,uint32_t* stats,uint32_t category) {
     }
     const auto head=Field<uint16_t>(manager,0x30+category*12);
     LogController(manager,head,category);
-    using Function=void(*)(void*,uint32_t*,uint32_t);
-    reinterpret_cast<Function>(base+0x12d6220)(manager,stats,category);
+    pressureScheduled+=PressurePolicy::Retire(manager,stats,category,multiplier,sharedPressure || geometryRecovery);
     // Pressure flags describe the pre-call snapshot and can overlap. Timed
     // auto-fade is handled elsewhere and does not appear as capacity retirement.
     auto& window=retirementWindows[category];
     window.Add(stats[2]-removedBefore,countBefore,bytesBefore);
     if (window.Due(now)) {
-        Diagnostics::Line(fmt::format("Capacity retirement window: category={}, calls={}, selections={}, peakCount={}, peakGeometryBytes={}; latest globalCount={}, categoryCount={}, geometryBytes={}, categoryBytes={}, triangles={}; countPressure={}, geometryPressure={}, trianglePressure={}",
+        Diagnostics::Line(fmt::format("Capacity retirement window: category={}, calls={}, selections={}, peakCount={}, peakGeometryBytes={}; latest globalCount={}, categoryCount={}, geometryBytes={}, categoryBytes={}, triangles={}; countPressure={}, geometryPressure={}, trianglePressure={}, sharedPressure={}",
             category,window.calls,window.selections,window.maxCount,window.maxBytes,countBefore,categoryCount,bytesBefore,categoryBytes,triangles,
             (categoryCount>600U*multiplier && countBefore>1200U*multiplier)||countBefore>Capacity::HardCount(multiplier),
-            categoryBytes>0x80000U*multiplier && bytesBefore>0x100000U*multiplier,triangles>100000U*multiplier));
+            categoryBytes>0x80000U*multiplier && bytesBefore>0x100000U*multiplier,triangles>100000U*multiplier,sharedPressure));
         window.Reset(now);
     }
 }

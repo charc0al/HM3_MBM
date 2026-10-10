@@ -19,7 +19,8 @@
 // Startup coordinator for a larger *existing* native decal manager. Two changes
 // must agree: Capacity.h patches its allocation/layout/retirement constants, and
 // NativeBridge.h supplies GPU buffers too large for the generic page allocator.
-// Rendering, slot allocation, fading and list maintenance remain native code.
+// Rendering, slot allocation, fade execution and list maintenance remain native.
+// PressurePolicy bounds admission and schedules expiry through native fields.
 // All native addresses are RVAs in the single executable identified by the hash;
 // adding the loaded module base handles ASLR, not compatibility with other builds.
 namespace {

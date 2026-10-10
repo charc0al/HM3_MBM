@@ -8,8 +8,8 @@
 
 namespace Diagnostics {
 // Independent append-only logging: the original first-impact crash left the
-// SDK log empty. Immediate flush prioritizes evidence surviving a native crash
-// over throughput, so normal high-frequency telemetry is sampled by the bridge.
+// SDK log empty. Normal telemetry uses the OS file cache; faults/startup flush
+// explicitly. Avoid forcing storage synchronization from the render/update lock.
 // This facility observes failures; it does not recover or change exception flow.
 inline HANDLE file = INVALID_HANDLE_VALUE;
 inline void* handler = nullptr;
@@ -46,15 +46,15 @@ struct RetirementWindow {
     }
 };
 
-inline void Write(const char* text, size_t length) {
+inline void Write(const char* text, size_t length,bool flush=true) {
     if (file == INVALID_HANDLE_VALUE) return;
     DWORD written = 0;
     WriteFile(file, text, static_cast<DWORD>(length), &written, nullptr);
-    FlushFileBuffers(file);
+    if (flush) FlushFileBuffers(file);
 }
 inline void Line(const std::string& text) {
     const auto line=text+"\r\n";
-    Write(line.data(),line.size());
+    Write(line.data(),line.size(),false);
 }
 
 // The stress fault returned from this slot's render-object Release call. Dump
@@ -145,7 +145,7 @@ inline void Start() {
     SYSTEMTIME time{};
     GetLocalTime(&time);
     char buffer[256]{};
-    _snprintf_s(buffer,sizeof(buffer),_TRUNCATE,"\r\nMoreBloodDecals build 5 (shared render registry diagnostics): %04u-%02u-%02u %02u:%02u:%02u PID=%lu\r\n",
+    _snprintf_s(buffer,sizeof(buffer),_TRUNCATE,"\r\nMoreBloodDecals build 6 (bounded admission / pressure cleanup): %04u-%02u-%02u %02u:%02u:%02u PID=%lu\r\n",
         time.wYear,time.wMonth,time.wDay,time.wHour,time.wMinute,time.wSecond,GetCurrentProcessId());
     Write(buffer,std::strlen(buffer));
     handler=AddVectoredExceptionHandler(1,Exception);
@@ -156,7 +156,7 @@ inline void Stop() {
     nativeBase.store(0);
     if (handler) RemoveVectoredExceptionHandler(handler);
     handler=nullptr;
-    if (file != INVALID_HANDLE_VALUE) CloseHandle(file);
+    if (file != INVALID_HANDLE_VALUE) { FlushFileBuffers(file); CloseHandle(file); }
     file=INVALID_HANDLE_VALUE;
 }
 }
