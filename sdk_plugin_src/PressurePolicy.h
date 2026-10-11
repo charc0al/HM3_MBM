@@ -7,13 +7,20 @@ namespace PressurePolicy {
 // Enlarging decal storage does not enlarge the renderer's shared uint16 handle
 // registry. Leave room for particles, scene objects and allocations on other
 // threads. Hysteresis starts eviction before admission has to stop and avoids
-// repeatedly opening/closing admission at one boundary.
-inline uint32_t Free(uint32_t used,uint32_t capacity) { return used<capacity ? capacity-used : 0; }
-inline bool CanAdmit(uint32_t used,uint32_t capacity) { return capacity && Free(used,capacity)>capacity/8; }
+// repeatedly opening/closing admission at one boundary. Build 7 uses more of
+// this pool after build 6's ordinary-weapon tests: at capacity 65536, start
+// cleanup with 4096 free, recover to 6144, and stop admission with 2048 free.
+// These reserves observe shared counters; they cannot reserve handles against
+// unrelated renderer threads. Keep creation throttling and bounded cleanup.
+inline constexpr uint32_t Free(uint32_t used,uint32_t capacity) { return used<capacity ? capacity-used : 0; }
+inline constexpr uint32_t AdmissionReserve(uint32_t capacity) { return capacity/32; }
+inline constexpr uint32_t CleanupReserve(uint32_t capacity) { return capacity/16; }
+inline constexpr uint32_t RecoveryReserve(uint32_t capacity) { return capacity/16+capacity/32; }
+inline bool CanAdmit(uint32_t used,uint32_t capacity) { return capacity && Free(used,capacity)>AdmissionReserve(capacity); }
 inline bool UpdatePressure(bool active,uint32_t used,uint32_t capacity) {
     if (!capacity) return true;
     const auto free=Free(used,capacity);
-    return active ? free<capacity/4 : free<=capacity*3/16;
+    return active ? free<RecoveryReserve(capacity) : free<=CleanupReserve(capacity);
 }
 
 // Bound both CPU creation work and transient geometry uploads. These are burst

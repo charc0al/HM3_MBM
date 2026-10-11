@@ -145,7 +145,7 @@ inline void Start() {
     SYSTEMTIME time{};
     GetLocalTime(&time);
     char buffer[256]{};
-    _snprintf_s(buffer,sizeof(buffer),_TRUNCATE,"\r\nMoreBloodDecals build 6 (bounded admission / pressure cleanup): %04u-%02u-%02u %02u:%02u:%02u PID=%lu\r\n",
+    _snprintf_s(buffer,sizeof(buffer),_TRUNCATE,"\r\nMoreBloodDecals build 7 (increased shared-pool retention): %04u-%02u-%02u %02u:%02u:%02u PID=%lu\r\n",
         time.wYear,time.wMonth,time.wDay,time.wHour,time.wMinute,time.wSecond,GetCurrentProcessId());
     Write(buffer,std::strlen(buffer));
     handler=AddVectoredExceptionHandler(1,Exception);
