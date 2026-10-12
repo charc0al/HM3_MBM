@@ -197,7 +197,7 @@
             "m_ridDecalMaterial": {
               "type": "ZRuntimeResourceID",
               "value": {
-                "resource": "[assembly:/_pro/effects/materials/liquid/fx_decal_liquid_blood_spots.mi].pc_mi",
+                "resource": "[assembly:/modded/charc0al/morebloodcomplete/materials/fx_decal_liquid_blood_spots_floor_finish.mi].pc_mi",
                 "flag": "5F"
               }
             },
@@ -607,7 +607,7 @@
             "m_ridDecalMaterial": {
               "type": "ZRuntimeResourceID",
               "value": {
-                "resource": "[assembly:/_pro/effects/materials/liquid/fx_decal_liquid_blood_spots.mi].pc_mi",
+                "resource": "[assembly:/modded/charc0al/morebloodcomplete/materials/fx_decal_liquid_blood_spots_floor_finish.mi].pc_mi",
                 "flag": "5F"
               }
             },
@@ -695,11 +695,11 @@
             },
             "m_fDecalSizeA": {
               "type": "float32",
-              "value": 1.05
+              "value": 2.1
             },
             "m_fDecalSizeB": {
               "type": "float32",
-              "value": 1.8
+              "value": 3.6
             },
             "m_bUseParticleColor": {
               "type": "bool",
