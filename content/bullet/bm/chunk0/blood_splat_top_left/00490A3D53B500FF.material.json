@@ -1,0 +1,216 @@
+{
+  "$schema": "https://glaciermodding.org/schemas/material.schema.json",
+  "MATI": "[assembly:/modded/charc0al/morebloodcomplete/materials/fx_decal_liquid_blood_splat_top_left.mi].pc_mi",
+  "MATT": "",
+  "MATB": "",
+  "MATE": "[[assembly:/_pro/effects/materialclasses/decal/fx_decal_liquid_splat.materialclass].fx](dx11).pc_mate",
+  "ERES": "",
+  "TYPE": "Standard",
+  "Material": {
+    "Instance": [
+      {
+        "Name": "fx_decal_liquid_blood_splat_top_left.mi",
+        "Tags": "",
+        "Binder": [
+          {
+            "Render State": [
+              {
+                "Name": "RenderState",
+                "Enabled": 1,
+                "Blend Enabled": 0,
+                "Decal Blend Diffuse": 1,
+                "Decal Blend Normal": 1,
+                "Decal Blend Specular": 1,
+                "Decal Blend Roughness": 1,
+                "Decal Blend Emission": 0,
+                "Alpha Test Enabled": 0,
+                "Alpha Reference": 0,
+                "Fog Enabled": 1,
+                "Culling Mode": "DontCare",
+                "Z Bias": 0,
+                "Z Offset": 0,
+                "Subsurface Red": 0,
+                "Subsurface Green": 0,
+                "Subsurface Blue": 0,
+                "Subsurface Value": 0
+              }
+            ],
+            "Float Value": [
+              {
+                "Name": "Lighting_01_SpecularPower",
+                "Enabled": 1,
+                "Value": 0.949999988079071
+              },
+              {
+                "Name": "SamplerNormal_01_BumpScale",
+                "Enabled": 1,
+                "Value": 0.699999988079071
+              },
+              {
+                "Name": "gm_mTransform2D_01",
+                "Enabled": 1,
+                "Value": [
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0
+                ]
+              },
+              {
+                "Name": "ConstantVector1D_01_Value",
+                "Enabled": 1,
+                "Value": 0.019999999552965164
+              },
+              {
+                "Name": "Multiply_05_V2",
+                "Enabled": 1,
+                "Value": [
+                  10,
+                  10,
+                  10,
+                  10
+                ]
+              },
+              {
+                "Name": "Multiply_07_V2",
+                "Enabled": 1,
+                "Value": [
+                  0.9900000095367432,
+                  0.9900000095367432,
+                  0.9900000095367432,
+                  0.9900000095367432
+                ]
+              },
+              {
+                "Name": "Lerp_04_s",
+                "Enabled": 1,
+                "Value": [
+                  0.699999988079071,
+                  0.699999988079071,
+                  0.699999988079071,
+                  0.699999988079071
+                ]
+              },
+              {
+                "Name": "Multiply_06_V2",
+                "Enabled": 1,
+                "Value": [
+                  0.20000000298023224,
+                  0.20000000298023224,
+                  0.20000000298023224,
+                  0.20000000298023224
+                ]
+              }
+            ],
+            "Texture": [
+              {
+                "Name": "mapTexture2DNormal_01",
+                "Enabled": 1,
+                "Texture Id": "[assembly:/modded/charc0al/morebloodcomplete/textures/blood_splat_top_left_2x2.texture?/normal_a.tex](asnormalmap).pc_tex",
+                "Tiling U": "",
+                "Tiling V": "",
+                "Type": "AsNormalMap"
+              },
+              {
+                "Name": "mapTexture2D_01",
+                "Enabled": 1,
+                "Texture Id": "[assembly:/_pro/effects/textures/misc/fx_colorindex.texture?/intexblood_a.tex](ascolormap).pc_tex",
+                "Tiling U": "",
+                "Tiling V": "",
+                "Type": "AsColorMap"
+              },
+              {
+                "Name": "mapTexture2DHeightMap_01",
+                "Enabled": 1,
+                "Texture Id": "[assembly:/modded/charc0al/morebloodcomplete/textures/blood_splat_top_left_2x2.texture?/mask_a.tex](asheightmap).pc_tex",
+                "Tiling U": "",
+                "Tiling V": "",
+                "Type": "AsHeightMap"
+              },
+              {
+                "Name": "mapTexture2D_02",
+                "Enabled": 1,
+                "Texture Id": "[assembly:/modded/charc0al/morebloodcomplete/textures/blood_splat_top_left_2x2.texture?/height_a.tex](asheightmap).pc_tex",
+                "Tiling U": "",
+                "Tiling V": "",
+                "Type": "AsHeightMap"
+              }
+            ],
+            "Color": [
+              {
+                "Name": "ConstantColorRGB_02_Value",
+                "Enabled": 1,
+                "Value": [
+                  1,
+                  0.9490196704864502,
+                  0.9490196704864502
+                ]
+              },
+              {
+                "Name": "ConstantColorRGB_01_Value",
+                "Enabled": 1,
+                "Value": [
+                  0.8705883026123047,
+                  0.8705883026123047,
+                  0.8705883026123047
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "Overrides": {},
+  "Flags": {
+    "Class": {
+      "REFLECTION2D": false,
+      "REFRACTION2D": false,
+      "LIGHTING": true,
+      "EMISSIVE": false,
+      "DISCARD": false,
+      "LM_SKIN": false,
+      "PRIMCLASS_STANDARD": true,
+      "PRIMCLASS_LINKED": false,
+      "PRIMCLASS_WEIGHTED": false,
+      "DOFOVERRIDE": false,
+      "USES_DEFAULT_VS": true,
+      "USES_SPRITE_SA_VS": false,
+      "USES_SPRITE_AO_VS": false,
+      "ALPHA": true,
+      "USES_SIMPLE_SHADER": true,
+      "DISABLE_INSTANCING": false,
+      "LM_HAIR": false,
+      "SAMPLE_LIGHTING": false,
+      "HORIZONMAPPING": false,
+      "UNKNOWN_3": false,
+      "UNKNOWN_4": false,
+      "UNKNOWN_5": false
+    },
+    "Instance": {
+      "OPAQUE_EMISSIVE": false,
+      "TRANS_EMISSIVE": false,
+      "TRANSADD_EMISSIVE": false,
+      "TRANSALL": false,
+      "OPAQUE_LIT": false,
+      "TRANS_LIT": false,
+      "DECAL": true,
+      "REFRACTIVE": false,
+      "LM_SKIN": false,
+      "LM_HAIR": false,
+      "FORCE_EMISSIVE": false,
+      "DISABLE_SHADER_LOD": true,
+      "DISCARD": false,
+      "DECAL_EMISSIVE": false,
+      "DECAL_ALL": false,
+      "WATER_CLIPPING": false,
+      "SAMPLE_LIGHTING": false,
+      "EXCLUDE_GLOBAL_SHADOWS": false,
+      "ALL": false
+    }
+  }
+}

@@ -1,4 +1,12 @@
 {
-	"$schema": "https://raw.githubusercontent.com/atampy25/quickentity-editor-next/main/src/lib/project-schema.json",
-	"customPaths": []
+  "$schema": "https://raw.githubusercontent.com/atampy25/quickentity-editor-next/main/src/lib/project-schema.json",
+  "customPaths": [
+    "[assembly:/modded/charc0al/morebloodcomplete/materials/fx_decal_liquid_blood_splat_top_left.mi].pc_mi",
+    "[assembly:/modded/charc0al/morebloodcomplete/textures/blood_splat_top_left_2x2.texture?/normal_a.tex](asnormalmap).pc_tex",
+    "[assembly:/modded/charc0al/morebloodcomplete/textures/blood_splat_top_left_2x2.texture?/normal_a.tex](asnormalmap).pc_mipblock1",
+    "[assembly:/modded/charc0al/morebloodcomplete/textures/blood_splat_top_left_2x2.texture?/mask_a.tex](asheightmap).pc_tex",
+    "[assembly:/modded/charc0al/morebloodcomplete/textures/blood_splat_top_left_2x2.texture?/mask_a.tex](asheightmap).pc_mipblock1",
+    "[assembly:/modded/charc0al/morebloodcomplete/textures/blood_splat_top_left_2x2.texture?/height_a.tex](asheightmap).pc_tex",
+    "[assembly:/modded/charc0al/morebloodcomplete/textures/blood_splat_top_left_2x2.texture?/height_a.tex](asheightmap).pc_mipblock1"
+  ]
 }
